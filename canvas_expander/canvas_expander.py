@@ -1,7 +1,7 @@
 # BBD's Krita Script Starter Feb 2018
 
 from krita import Extension
-from .operation_function import ExpanderFunction
+from .expander_function import ExpanderFunction
 
 EXTENSION_ID = 'pykrita_canvas_expander'
 MENU_ENTRY = 'Canvas Expander'
