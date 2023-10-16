@@ -1,0 +1,8 @@
+[Desktop Entry]
+Type=Service
+ServiceTypes=Krita/PythonPlugin
+X-KDE-Library=canvas_expander
+X-Python-2-Compatible=false
+X-Krita-Manual=Manual.html
+Name=Canvas Expander
+Comment=Tools to speed up workflow.
