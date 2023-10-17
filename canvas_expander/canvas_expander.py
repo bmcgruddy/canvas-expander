@@ -3,7 +3,7 @@
 from krita import Extension
 from .expander_function import ExpanderFunction
 from .scale_to_zoom_function import ScaleToZoomFunction
-
+from .layer_toggle_function import LayerToggleFunction
 
 EXTENSION_ID_FULL = 'pykrita_canvas_expander_full'
 MENU_ENTRY_FULL = 'Canvas Expander (Default)'
@@ -22,6 +22,31 @@ MENU_ENTRY_SELECTION = 'Canvas Expander (Selection)'
 
 EXTENSION_ID_SCALE_TO_ZOOM = 'pykrita_canvas_expander_scale_to_zoom'
 MENU_ENTRY_SCALE_TO_ZOOM = 'Canvas Expander (Scale To Zoom)'
+
+
+EXTENSION_ID_LAYER_TOGGLE_BLUE = 'pykrita_canvas_expander_layer_toggle_blue'
+MENU_ENTRY_LAYER_TOGGLE_BLUE = 'Canvas Expander (Toggle Blue Layers)'
+
+EXTENSION_ID_LAYER_TOGGLE_GREEN = 'pykrita_canvas_expander_layer_toggle_green'
+MENU_ENTRY_LAYER_TOGGLE_GREEN = 'Canvas Expander (Toggle Green Layers)'
+
+EXTENSION_ID_LAYER_TOGGLE_YELLOW = 'pykrita_canvas_expander_layer_toggle_yellow'
+MENU_ENTRY_LAYER_TOGGLE_YELLOW = 'Canvas Expander (Toggle Yellow Layers)'
+
+EXTENSION_ID_LAYER_TOGGLE_ORANGE = 'pykrita_canvas_expander_layer_toggle_orange'
+MENU_ENTRY_LAYER_TOGGLE_ORANGE = 'Canvas Expander (Toggle Orange Layers)'
+
+EXTENSION_ID_LAYER_TOGGLE_BROWN = 'pykrita_canvas_expander_layer_toggle_brown'
+MENU_ENTRY_LAYER_TOGGLE_BROWN = 'Canvas Expander (Toggle Brown Layers)'
+
+EXTENSION_ID_LAYER_TOGGLE_RED = 'pykrita_canvas_expander_layer_toggle_red'
+MENU_ENTRY_LAYER_TOGGLE_RED = 'Canvas Expander (Toggle Red Layers)'
+
+EXTENSION_ID_LAYER_TOGGLE_PURPLE = 'pykrita_canvas_expander_layer_toggle_purple'
+MENU_ENTRY_LAYER_TOGGLE_PURPLE = 'Canvas Expander (Toggle Purple Layers)'
+
+EXTENSION_ID_LAYER_TOGGLE_GREY = 'pykrita_canvas_expander_layer_toggle_grey'
+MENU_ENTRY_LAYER_TOGGLE_GREY = 'Canvas Expander (Toggle Grey Layers)'
 
 class CanvasExpander(Extension):
 
@@ -52,6 +77,30 @@ class CanvasExpander(Extension):
         action = window.createAction(EXTENSION_ID_SCALE_TO_ZOOM, MENU_ENTRY_SCALE_TO_ZOOM, "tools/scripts")
         action.triggered.connect(self.action_triggered_scale_to_zoom)
 
+        action = window.createAction(EXTENSION_ID_LAYER_TOGGLE_BLUE, MENU_ENTRY_LAYER_TOGGLE_BLUE, "tools/scripts")
+        action.triggered.connect(self.action_triggered_layer_toggle_blue)
+
+        action = window.createAction(EXTENSION_ID_LAYER_TOGGLE_GREEN, MENU_ENTRY_LAYER_TOGGLE_GREEN, "tools/scripts")
+        action.triggered.connect(self.action_triggered_layer_toggle_green)
+
+        action = window.createAction(EXTENSION_ID_LAYER_TOGGLE_YELLOW, MENU_ENTRY_LAYER_TOGGLE_YELLOW, "tools/scripts")
+        action.triggered.connect(self.action_triggered_layer_toggle_yellow)
+
+        action = window.createAction(EXTENSION_ID_LAYER_TOGGLE_ORANGE, MENU_ENTRY_LAYER_TOGGLE_ORANGE, "tools/scripts")
+        action.triggered.connect(self.action_triggered_layer_toggle_orange)
+
+        action = window.createAction(EXTENSION_ID_LAYER_TOGGLE_BROWN, MENU_ENTRY_LAYER_TOGGLE_BROWN, "tools/scripts")
+        action.triggered.connect(self.action_triggered_layer_toggle_brown)
+
+        action = window.createAction(EXTENSION_ID_LAYER_TOGGLE_RED, MENU_ENTRY_LAYER_TOGGLE_RED, "tools/scripts")
+        action.triggered.connect(self.action_triggered_layer_toggle_red)
+
+        action = window.createAction(EXTENSION_ID_LAYER_TOGGLE_PURPLE, MENU_ENTRY_LAYER_TOGGLE_PURPLE, "tools/scripts")
+        action.triggered.connect(self.action_triggered_layer_toggle_purple)
+
+        action = window.createAction(EXTENSION_ID_LAYER_TOGGLE_GREY, MENU_ENTRY_LAYER_TOGGLE_GREY, "tools/scripts")
+        action.triggered.connect(self.action_triggered_layer_toggle_grey)
+
     def action_triggered_full(self):
         ExpanderFunction(selection=False, selectedLayer=False, paintLayers=True, viewport=True)
 
@@ -69,3 +118,27 @@ class CanvasExpander(Extension):
 
     def action_triggered_scale_to_zoom(self):
         ScaleToZoomFunction()
+
+    def action_triggered_layer_toggle_blue(self):
+        LayerToggleFunction(1)
+
+    def action_triggered_layer_toggle_green(self):
+        LayerToggleFunction(2)
+
+    def action_triggered_layer_toggle_yellow(self):
+        LayerToggleFunction(3)
+
+    def action_triggered_layer_toggle_orange(self):
+        LayerToggleFunction(4)
+
+    def action_triggered_layer_toggle_brown(self):
+        LayerToggleFunction(5)
+
+    def action_triggered_layer_toggle_red(self):
+        LayerToggleFunction(6)
+
+    def action_triggered_layer_toggle_purple(self):
+        LayerToggleFunction(7)
+
+    def action_triggered_layer_toggle_grey(self):
+        LayerToggleFunction(8)
