@@ -9,7 +9,7 @@ def _allChildNodes(root) :
     nodes = (*nodes,*_allChildNodes(childNode))
   return nodes
 
-def ExpanderFunction(selectedLayer=False, paintLayers=True, viewport=True):
+def ExpanderFunction(selection=False, selectedLayer=False, paintLayers=True, viewport=True):
   instance = Krita.instance()
   documement = instance.activeDocument()
   window = instance.activeWindow()
@@ -27,6 +27,17 @@ def ExpanderFunction(selectedLayer=False, paintLayers=True, viewport=True):
   _combined_bounds = QRect()
   if selectedLayer:
     _combined_bounds = _combined_bounds.united(n_selected_layer.bounds())
+
+  if selection:
+    _selection = documement.selection()
+    if _selection:
+      _selection_qrect = QRect(
+        _selection.x(),
+        _selection.y(),
+        _selection.width(),
+        _selection.height()
+      )
+      _combined_bounds = _combined_bounds.united(_selection_qrect)
 
   if paintLayers:
     for node in _allChildNodes(documement.rootNode()):

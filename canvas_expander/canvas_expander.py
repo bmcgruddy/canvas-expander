@@ -17,6 +17,9 @@ MENU_ENTRY_ALL_LAYERS = 'Canvas Expander (Paint Layers)'
 EXTENSION_ID_VIEWPORT = 'pykrita_canvas_expander_crop_to_view'
 MENU_ENTRY_VIEWPORT  = 'Canvas Expander (Viewport)'
 
+EXTENSION_ID_SELECTION = 'pykrita_canvas_expander_selection'
+MENU_ENTRY_SELECTION = 'Canvas Expander (Selection)'
+
 EXTENSION_ID_SCALE_TO_ZOOM = 'pykrita_canvas_expander_scale_to_zoom'
 MENU_ENTRY_SCALE_TO_ZOOM = 'Canvas Expander (Scale To Zoom)'
 
@@ -43,20 +46,26 @@ class CanvasExpander(Extension):
         action = window.createAction(EXTENSION_ID_VIEWPORT, MENU_ENTRY_VIEWPORT, "tools/scripts")
         action.triggered.connect(self.action_triggered_viewport)
 
+        action = window.createAction(EXTENSION_ID_SELECTION, MENU_ENTRY_SELECTION, "tools/scripts")
+        action.triggered.connect(self.action_triggered_selection)
+
         action = window.createAction(EXTENSION_ID_SCALE_TO_ZOOM, MENU_ENTRY_SCALE_TO_ZOOM, "tools/scripts")
         action.triggered.connect(self.action_triggered_scale_to_zoom)
 
     def action_triggered_full(self):
-        ExpanderFunction(selectedLayer=False, paintLayers=True, viewport=True)
+        ExpanderFunction(selection=False, selectedLayer=False, paintLayers=True, viewport=True)
 
     def action_triggered_current(self):
-        ExpanderFunction(selectedLayer=True, paintLayers=False, viewport=False)
+        ExpanderFunction(selection=False, selectedLayer=True, paintLayers=False, viewport=False)
 
     def action_triggered_layers(self):
-        ExpanderFunction(selectedLayer=False, paintLayers=True, viewport=False)
+        ExpanderFunction(selection=False, selectedLayer=False, paintLayers=True, viewport=False)
 
     def action_triggered_viewport(self):
-        ExpanderFunction(selectedLayer=False, paintLayers=False, viewport=True)
+        ExpanderFunction(selection=False, selectedLayer=False, paintLayers=False, viewport=True)
+
+    def action_triggered_selection(self):
+        ExpanderFunction(selection=True, selectedLayer=False, paintLayers=False, viewport=False)
 
     def action_triggered_scale_to_zoom(self):
         ScaleToZoomFunction()
