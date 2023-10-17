@@ -9,7 +9,7 @@ def _allChildNodes(root) :
     nodes = (*nodes,*_allChildNodes(childNode))
   return nodes
 
-def ExpanderFunction(selectedLayerOnly=False, includeviewport=True):
+def ExpanderFunction(selectedLayer=False, paintLayers=True, viewport=True):
   instance = Krita.instance()
   documement = instance.activeDocument()
   window = instance.activeWindow()
@@ -25,13 +25,14 @@ def ExpanderFunction(selectedLayerOnly=False, includeviewport=True):
 
   # Combine all paintlayer bounding box infomation.
   _combined_bounds = QRect()
-  if selectedLayerOnly:
+  if selectedLayer:
     _combined_bounds = _combined_bounds.united(n_selected_layer.bounds())
-  else:
+
+  if paintLayers:
     for node in _allChildNodes(documement.rootNode()):
       _combined_bounds = _combined_bounds.united(node.bounds())
 
-  if includeviewport:
+  if viewport:
     _zoom = c_zoom * w_devicePixelRatioF / (d_resolution/72)
     _c_dx_a = -int(c_dx * w_devicePixelRatioF / _zoom)
     _c_dy_a = -int(c_dy * w_devicePixelRatioF / _zoom)

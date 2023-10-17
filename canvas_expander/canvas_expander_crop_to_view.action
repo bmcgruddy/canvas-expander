@@ -3,7 +3,7 @@
     <Actions category="Scripts">
         <text>Canvas Expander</text>
 
-        <Action name="pykrita_canvas_expander_current">
+        <Action name="pykrita_canvas_expander_crop_to_view">
         <icon></icon>
         <text>Canvas Expander</text>
         <whatsThis></whatsThis>
@@ -11,7 +11,7 @@
         <iconText></iconText>
         <activationFlags>10000</activationFlags>
         <activationConditions>0</activationConditions>
-        <shortcut>ctrl+alt+shift+s</shortcut>
+        <shortcut>ctrl+alt+shift+c</shortcut>
         <isCheckable>false</isCheckable>
         <statusTip></statusTip>
         </Action>
