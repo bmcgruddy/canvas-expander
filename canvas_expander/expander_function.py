@@ -51,3 +51,4 @@ def ExpanderFunction(selection=False, selectedLayer=False, paintLayers=True, vie
     _combined_bounds.width(),
     _combined_bounds.height()
   )
+  documement.refreshProjection()
