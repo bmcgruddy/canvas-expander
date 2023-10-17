@@ -44,6 +44,14 @@ def ExpanderFunction(selection=False, selectedLayer=False, paintLayers=True, vie
     _viewport_bounds = QRect(_c_dx_a, _c_dy_a, _w_width_a, _w_height_a)
     _combined_bounds = _combined_bounds.united(_viewport_bounds)
 
+  if all((
+    documement.xOffset() == _combined_bounds.x(),
+    documement.yOffset() == _combined_bounds.y(),
+    documement.width() == _combined_bounds.width(),
+    documement.height() == _combined_bounds.height(),
+    )):
+    return False
+
   # Apply combined bounding box to document.
   documement.resizeImage(
     _combined_bounds.x(),
@@ -52,3 +60,4 @@ def ExpanderFunction(selection=False, selectedLayer=False, paintLayers=True, vie
     _combined_bounds.height()
   )
   documement.refreshProjection()
+  return True

@@ -23,6 +23,10 @@ def ScaleToZoomFunction():
 
 
   _zoom = c_zoom * w_devicePixelRatioF / (d_resolution/72)
+
+  if round(_zoom, 2) == 1.0:
+    return False
+
   _width = int(d_width * _zoom)
   _height = int(d_height * _zoom)
 
@@ -31,3 +35,4 @@ def ScaleToZoomFunction():
   scroll.horizontalScrollBar().setValue(s_horizontal)
   scroll.verticalScrollBar().setValue(s_vertical)
   documement.refreshProjection()
+  return True
