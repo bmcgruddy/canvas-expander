@@ -3,7 +3,7 @@
 from krita import Extension
 from .expander_function import ExpanderFunction
 from .scale_to_zoom_function import ScaleToZoomFunction
-from .layer_toggle_function import LayerToggleFunction
+from .layer_toggle_function import (LayerToggleFunction, LayerIsolateFunction)
 from .extenstion_ids import *
 
 class CanvasExpander(Extension):
@@ -59,6 +59,30 @@ class CanvasExpander(Extension):
         action = window.createAction(EXTENSION_ID_LAYER_TOGGLE_GREY, MENU_ENTRY_LAYER_TOGGLE_GREY, "tools/scripts")
         action.triggered.connect(self.action_triggered_layer_toggle_grey)
 
+        action = window.createAction(EXTENSION_ID_LAYER_ISOLATE_BLUE, MENU_ENTRY_LAYER_ISOLATE_BLUE, "tools/scripts")
+        action.triggered.connect(self.action_triggered_layer_isolate_blue)
+
+        action = window.createAction(EXTENSION_ID_LAYER_ISOLATE_GREEN, MENU_ENTRY_LAYER_ISOLATE_GREEN, "tools/scripts")
+        action.triggered.connect(self.action_triggered_layer_isolate_green)
+
+        action = window.createAction(EXTENSION_ID_LAYER_ISOLATE_YELLOW, MENU_ENTRY_LAYER_ISOLATE_YELLOW, "tools/scripts")
+        action.triggered.connect(self.action_triggered_layer_isolate_yellow)
+
+        action = window.createAction(EXTENSION_ID_LAYER_ISOLATE_ORANGE, MENU_ENTRY_LAYER_ISOLATE_ORANGE, "tools/scripts")
+        action.triggered.connect(self.action_triggered_layer_isolate_orange)
+
+        action = window.createAction(EXTENSION_ID_LAYER_ISOLATE_BROWN, MENU_ENTRY_LAYER_ISOLATE_BROWN, "tools/scripts")
+        action.triggered.connect(self.action_triggered_layer_isolate_brown)
+
+        action = window.createAction(EXTENSION_ID_LAYER_ISOLATE_RED, MENU_ENTRY_LAYER_ISOLATE_RED, "tools/scripts")
+        action.triggered.connect(self.action_triggered_layer_isolate_red)
+
+        action = window.createAction(EXTENSION_ID_LAYER_ISOLATE_PURPLE, MENU_ENTRY_LAYER_ISOLATE_PURPLE, "tools/scripts")
+        action.triggered.connect(self.action_triggered_layer_isolate_purple)
+
+        action = window.createAction(EXTENSION_ID_LAYER_ISOLATE_GREY, MENU_ENTRY_LAYER_ISOLATE_GREY, "tools/scripts")
+        action.triggered.connect(self.action_triggered_layer_isolate_grey)
+
     def action_triggered_full(self):
         ExpanderFunction(selection=False, selectedLayer=False, paintLayers=True, viewport=True)
 
@@ -100,3 +124,27 @@ class CanvasExpander(Extension):
 
     def action_triggered_layer_toggle_grey(self):
         LayerToggleFunction(8)
+
+    def action_triggered_layer_isolate_blue(self):
+        LayerIsolateFunction(1)
+
+    def action_triggered_layer_isolate_green(self):
+        LayerIsolateFunction(2)
+
+    def action_triggered_layer_isolate_yellow(self):
+        LayerIsolateFunction(3)
+
+    def action_triggered_layer_isolate_orange(self):
+        LayerIsolateFunction(4)
+
+    def action_triggered_layer_isolate_brown(self):
+        LayerIsolateFunction(5)
+
+    def action_triggered_layer_isolate_red(self):
+        LayerIsolateFunction(6)
+
+    def action_triggered_layer_isolate_purple(self):
+        LayerIsolateFunction(7)
+
+    def action_triggered_layer_isolate_grey(self):
+        LayerIsolateFunction(8)
