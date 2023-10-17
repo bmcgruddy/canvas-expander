@@ -6,7 +6,7 @@ from .scale_to_zoom_function import ScaleToZoomFunction
 
 
 EXTENSION_ID_FULL = 'pykrita_canvas_expander_full'
-MENU_ENTRY_FULL = 'Canvas Expander'
+MENU_ENTRY_FULL = 'Canvas Expander (Default)'
 
 EXTENSION_ID_CURRENT = 'pykrita_canvas_expander_current'
 MENU_ENTRY_CURRENT = 'Canvas Expander (Current Layer)'
