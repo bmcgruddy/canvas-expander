@@ -1,14 +1,6 @@
 from krita import Krita
 from PyQt5.QtCore import QRect
 
-def _allChildNodes(root) :
-  nodes = ()
-  for childNode in root.childNodes():
-    if childNode.type() == 'paintlayer':
-      nodes = (*nodes, childNode)
-    nodes = (*nodes,*_allChildNodes(childNode))
-  return nodes
-
 def ExpanderFunction(selection=False, selectedLayer=False, paintLayers=True, viewport=True):
   instance = Krita.instance()
   documement = instance.activeDocument()
@@ -40,7 +32,7 @@ def ExpanderFunction(selection=False, selectedLayer=False, paintLayers=True, vie
       _combined_bounds = _combined_bounds.united(_selection_qrect)
 
   if paintLayers:
-    for node in _allChildNodes(documement.rootNode()):
+    for node in documement.rootNode().findChildNodes('', True, True, 'paintlayer'):
       _combined_bounds = _combined_bounds.united(node.bounds())
 
   if viewport:
