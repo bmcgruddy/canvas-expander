@@ -20,8 +20,11 @@ class CanvasExpander(Extension):
         action = window.createAction(EXTENSION_ID_FULL, MENU_ENTRY_FULL, "tools/scripts")
         action.triggered.connect(self.action_triggered_full)
 
-        action = window.createAction(EXTENSION_ID_CURRENT, MENU_ENTRY_CURRENT, "tools/scripts")
-        action.triggered.connect(self.action_triggered_current)
+        action = window.createAction(EXTENSION_ID_ACTIVE_LAYER, MENU_ENTRY_ACTIVE_LAYER, "tools/scripts")
+        action.triggered.connect(self.action_triggered_active_layer)
+
+        action = window.createAction(EXTENSION_ID_SELECTED_LAYERS, MENU_ENTRY_SELECTED_LAYERS, "tools/scripts")
+        action.triggered.connect(self.action_triggered_selected_layers)
 
         action = window.createAction(EXTENSION_ID_ALL_LAYERS, MENU_ENTRY_ALL_LAYERS, "tools/scripts")
         action.triggered.connect(self.action_triggered_layers)
@@ -84,19 +87,22 @@ class CanvasExpander(Extension):
         action.triggered.connect(self.action_triggered_layer_isolate_grey)
 
     def action_triggered_full(self):
-        ExpanderFunction(selection=False, selectedLayer=False, paintLayers=True, viewport=True)
+        ExpanderFunction(paintLayers=True, viewport=True)
 
-    def action_triggered_current(self):
-        ExpanderFunction(selection=False, selectedLayer=True, paintLayers=False, viewport=False)
+    def action_triggered_active_layer(self):
+        ExpanderFunction(activeLayer=True)
+
+    def action_triggered_selected_layers(self):
+        ExpanderFunction(selectedLayers=True)
 
     def action_triggered_layers(self):
-        ExpanderFunction(selection=False, selectedLayer=False, paintLayers=True, viewport=False)
+        ExpanderFunction(paintLayers=True)
 
     def action_triggered_viewport(self):
-        ExpanderFunction(selection=False, selectedLayer=False, paintLayers=False, viewport=True)
+        ExpanderFunction(viewport=True)
 
     def action_triggered_selection(self):
-        ExpanderFunction(selection=True, selectedLayer=False, paintLayers=False, viewport=False)
+        ExpanderFunction(selection=True)
 
     def action_triggered_scale_to_zoom(self):
         ScaleToZoomFunction()

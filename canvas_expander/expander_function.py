@@ -1,12 +1,12 @@
 from krita import Krita
 from PyQt5.QtCore import QRect
 
-def ExpanderFunction(selection=False, selectedLayer=False, paintLayers=True, viewport=True):
+def ExpanderFunction(selection=False, activeLayer=False, selectedLayers=False, paintLayers=False, viewport=False):
   instance = Krita.instance()
   documement = instance.activeDocument()
   window = instance.activeWindow()
 
-  n_selected_layer = documement.activeNode()
+  n_active_layer = documement.activeNode()
   c_zoom = window.activeView().canvas().zoomLevel()
   c_dx = window.activeView().flakeToCanvasTransform().dx()
   c_dy = window.activeView().flakeToCanvasTransform().dy()
@@ -15,10 +15,15 @@ def ExpanderFunction(selection=False, selectedLayer=False, paintLayers=True, vie
   d_resolution = documement.resolution()
   w_devicePixelRatioF = window.qwindow().devicePixelRatioF()
 
-  # Combine all paintlayer bounding box infomation.
+  # Combine all bounding box infomation.
   _combined_bounds = QRect()
-  if selectedLayer:
-    _combined_bounds = _combined_bounds.united(n_selected_layer.bounds())
+
+  if activeLayer:
+    _combined_bounds = _combined_bounds.united(n_active_layer.bounds())
+
+  if selectedLayers:
+    for node in window.activeView().selectedNodes():
+      _combined_bounds = _combined_bounds.united(node.bounds())
 
   if selection:
     _selection = documement.selection()
@@ -43,6 +48,9 @@ def ExpanderFunction(selection=False, selectedLayer=False, paintLayers=True, vie
     _w_height_a = int(w_height * w_devicePixelRatioF / _zoom)
     _viewport_bounds = QRect(_c_dx_a, _c_dy_a, _w_width_a, _w_height_a)
     _combined_bounds = _combined_bounds.united(_viewport_bounds)
+
+  if not _combined_bounds:
+    return False
 
   if all((
     documement.xOffset() == _combined_bounds.x(),

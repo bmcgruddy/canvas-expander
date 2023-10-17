@@ -3,7 +3,7 @@
     <Actions category="Scripts">
         <text>Canvas Expander</text>
 
-        <Action name="pykrita_canvas_expander_current">
+        <Action name="pykrita_canvas_expander_active_layer">
         <icon></icon>
         <text>Canvas Expander</text>
         <whatsThis></whatsThis>

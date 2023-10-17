@@ -2,8 +2,11 @@
 EXTENSION_ID_FULL = 'pykrita_canvas_expander_full'
 MENU_ENTRY_FULL = 'Canvas Expander (Default)'
 
-EXTENSION_ID_CURRENT = 'pykrita_canvas_expander_current'
-MENU_ENTRY_CURRENT = 'Canvas Expander (Current Layer)'
+EXTENSION_ID_ACTIVE_LAYER = 'pykrita_canvas_expander_active'
+MENU_ENTRY_ACTIVE_LAYER = 'Canvas Expander (Active Layer)'
+
+EXTENSION_ID_SELECTED_LAYERS = 'pykrita_canvas_expander_current'
+MENU_ENTRY_SELECTED_LAYERS = 'Canvas Expander (Selected Layers)'
 
 EXTENSION_ID_ALL_LAYERS = 'pykrita_canvas_expander_layers'
 MENU_ENTRY_ALL_LAYERS = 'Canvas Expander (Paint Layers)'
