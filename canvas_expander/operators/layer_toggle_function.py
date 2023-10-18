@@ -9,7 +9,7 @@ def _get_nodes_by_color(documement, color_index : int):
     if n.colorLabel() == color_index
   )
 
-def LayerToggleFunction(color_index : int = -1, value : int = -1, refreshProjection=True):
+def LayerToggleFunction(*args, color_index : int = -1, value : int = -1, refreshProjection : bool = True,  **kwargs):
   instance = Krita.instance()
   documement = instance.activeDocument()
   window = instance.activeWindow()
@@ -33,7 +33,7 @@ def LayerToggleFunction(color_index : int = -1, value : int = -1, refreshProject
   if refreshProjection:
     documement.refreshProjection()
 
-def LayerIsolateFunction(color_index : int = -1):
+def LayerIsolateFunction(*args, color_index : int = -1, **kwargs):
   instance = Krita.instance()
   documement = instance.activeDocument()
   window = instance.activeWindow()

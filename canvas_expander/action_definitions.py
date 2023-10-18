@@ -12,6 +12,8 @@ else:
   _operator_visibility_toggle = None
   _operator_layer_toggle = None
 
+
+
 class BaseAction:
   actionName = None
   actionNameFull = None
@@ -27,9 +29,9 @@ class BaseAction:
 
   def construct(self):
     def _function_constructor(operator, *args, **kwargs):
-        def _function(self):
-            return operator(*args, **kwargs)
-        return _function
+      def _function():
+        return operator(*args, **kwargs)
+      return _function
     return _function_constructor(self.operator, *self.operator_args, **self.operator_kwargs)
 
 # ExpanderFunction IDS
@@ -79,134 +81,114 @@ class ActionScaleToZoom(BaseAction):
   actionName = 'scale_to_zoom'
   actionNameFull = 'Scale To Zoom'
   operator = _operator_scale_to_zoom
-  operator_args = ()
-  operator_kwargs = {}
 
 class ActionToggleByColorSelected(BaseAction):
   actionName = 'layer_toggle_selected'
   actionNameFull = 'Toggle Selected Layers'
   operator = _operator_visibility_toggle
-  operator_args = ( -1, )
-  operator_kwargs = {}
+  operator_kwargs = { 'color_index' : -1 }
 
 class ActionToggleByColorBlue(BaseAction):
   actionName = 'layer_toggle_blue'
   actionNameFull = 'Toggle Blue Layers'
   operator = _operator_visibility_toggle
-  operator_args = ( 1, )
-  operator_kwargs = {}
+  operator_kwargs = { 'color_index' : 1 }
 
 class ActionToggleByColorGreen(BaseAction):
   actionName = 'layer_toggle_green'
   actionNameFull = 'Toggle Green Layers'
   operator = _operator_visibility_toggle
-  operator_args = ( 2, )
-  operator_kwargs = {}
+  operator_kwargs = { 'color_index' : 2 }
 
 class ActionToggleByColorYellow(BaseAction):
   actionName = 'layer_toggle_yellow'
   actionNameFull = 'Toggle Yellow Layers'
   operator = _operator_visibility_toggle
-  operator_args = (3,)
-  operator_kwargs = {}
+  operator_kwargs = { 'color_index' : 3 }
 
 class ActionToggleByColorOrange(BaseAction):
   actionName = 'layer_toggle_orange'
   actionNameFull = 'Toggle Orange Layers'
   operator = _operator_visibility_toggle
-  operator_args = (4,)
-  operator_kwargs = {}
+  operator_kwargs = { 'color_index' : 4 }
 
 class ActionToggleByColorBrown(BaseAction):
   actionName = 'layer_toggle_brown'
   actionNameFull = 'Toggle Brown Layers'
   operator = _operator_visibility_toggle
-  operator_args = (5,)
-  operator_kwargs = {}
+  operator_kwargs = { 'color_index' : 5 }
 
 class ActionToggleByColorRed(BaseAction):
   actionName = 'layer_toggle_red'
   actionNameFull = 'Toggle Red Layers'
   operator = _operator_visibility_toggle
-  operator_args = (6,)
-  operator_kwargs = {}
+  operator_kwargs = { 'color_index' : 6 }
 
 class ActionToggleByColorPurple(BaseAction):
   actionName = 'layer_toggle_purple'
   actionNameFull = 'Toggle Purple Layers'
   operator = _operator_visibility_toggle
-  operator_args = (7,)
-  operator_kwargs = {}
+  operator_kwargs = { 'color_index' : 7 }
 
 class ActionToggleByColorGrey(BaseAction):
   actionName = 'layer_toggle_grey'
   actionNameFull = 'Toggle Grey Layers'
   operator = _operator_visibility_toggle
-  operator_args = (8,)
-  operator_kwargs = {}
+  operator_kwargs = { 'color_index' : 8 }
 
 class ActionIsolateBySelected(BaseAction):
   actionName = 'layer_isolate_selected'
   actionNameFull = 'Isolate Selected Layers'
   operator = _operator_layer_toggle
-  operator_args = (-1,)
-  operator_kwargs = {}
+  operator_kwargs = { 'color_index' : -1 }
 
 class ActionIsolateByColorBlue(BaseAction):
   actionName = 'layer_isolate_blue'
   actionNameFull = 'Isolate Blue Layers'
   operator = _operator_layer_toggle
-  operator_args = (1,)
-  operator_kwargs = {}
+  operator_kwargs = { 'color_index' : 1 }
 
 class ActionIsolateByColorGreen(BaseAction):
   actionName = 'layer_isolate_green'
   actionNameFull = 'Isolate Green Layers'
   operator = _operator_layer_toggle
-  operator_args = (2,)
-  operator_kwargs = {}
+  operator_kwargs = { 'color_index' : 2 }
 
 class ActionIsolateByColorYellow(BaseAction):
   actionName = 'layer_isolate_yellow'
   actionNameFull = 'Isolate Yellow Layers'
   operator = _operator_layer_toggle
-  operator_args = (3,)
-  operator_kwargs = {}
+  operator_kwargs = { 'color_index' : 3 }
 
 class ActionIsolateByColorOrange(BaseAction):
   actionName = 'layer_isolate_orange'
   actionNameFull = 'Isolate Orange Layers'
   operator = _operator_layer_toggle
-  operator_args = (4,)
-  operator_kwargs = {}
+  operator_kwargs = { 'color_index' : 4 }
 
 class ActionIsolateByColorBrown(BaseAction):
   actionName = 'layer_isolate_brown'
   actionNameFull = 'Isolate Brown Layers'
   operator = _operator_layer_toggle
-  operator_args = (5,)
-  operator_kwargs = {}
+  operator_kwargs = { 'color_index' : 5 }
 
 class ActionIsolateByColorRed(BaseAction):
   actionName = 'layer_isolate_red'
   actionNameFull = 'Isolate Red Layers'
   operator = _operator_layer_toggle
-  operator_args = (6,)
-  operator_kwargs = {}
+  operator_kwargs = { 'color_index' : 6 }
 
 class ActionIsolateByColorPurple(BaseAction):
   actionName = 'layer_isolate_purple'
   actionNameFull = 'Isolate Purple Layers'
   operator = _operator_layer_toggle
-  operator_args = (7,)
-  operator_kwargs = {}
+  operator_kwargs = { 'color_index' : 7 }
 
 class ActionIsolateByColorGrey(BaseAction):
   actionName = 'layer_isolate_grey'
   actionNameFull = 'Isolate Grey Layers'
   operator = _operator_layer_toggle
-  operator_args = (8,)
-  operator_kwargs = {}
+  operator_kwargs = { 'color_index' : 8 }
 
 def BuildActionInstances():
   _action_list = ()

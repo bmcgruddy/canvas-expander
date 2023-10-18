@@ -1,7 +1,15 @@
 from krita import Krita
 from PyQt5.QtCore import QRect
 
-def ExpanderFunction(selection=False, activeLayer=False, selectedLayers=False, paintLayers=False, viewport=False):
+def ExpanderFunction(*args,
+    selection : bool = False,
+    activeLayer : bool = False,
+    selectedLayers : bool = False,
+    paintLayers : bool = False,
+    viewport : bool = False,
+    **kwargs
+    ):
+
   instance = Krita.instance()
   documement = instance.activeDocument()
   window = instance.activeWindow()

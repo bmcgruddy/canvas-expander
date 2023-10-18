@@ -1,7 +1,7 @@
 from krita import Krita
 from krita import QMdiArea, QAbstractScrollArea
 
-def ScaleToZoomFunction():
+def ScaleToZoomFunction(*args, **kwargs):
   instance = Krita.instance()
   documement = instance.activeDocument()
   window = instance.activeWindow()
