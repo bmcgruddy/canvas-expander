@@ -6,13 +6,12 @@ if _krita_module:
   from .operators import ScaleToZoomFunction as _operator_scale_to_zoom
   from .operators import LayerToggleFunction as _operator_visibility_toggle
   from .operators import LayerIsolateFunction as _operator_layer_toggle
+  from krita import *
 else:
   _operator_expander = None
   _operator_scale_to_zoom = None
   _operator_visibility_toggle = None
   _operator_layer_toggle = None
-
-
 
 class BaseAction:
   actionName = None
@@ -20,16 +19,24 @@ class BaseAction:
   operator = None
   operator_args = ()
   operator_kwargs = {}
+  icon = None
 
   def __init__(self, *args, **kwargs):
     self.actionIdentifier = f'pykrita_canvas_expander_{self.actionName}'
     self.actionMenuEntry = f'Canvas Expander ({self.actionNameFull})'
     self.actionTriggerName = f'action_triggered_{self.actionName}'
+    if _krita_module and self.icon:
+      self.icon = QIcon(self.icon)
+    elif _krita_module:
+      self.icon = QIcon()
+
     super().__init__(*args, **kwargs)
 
   def construct(self):
     def _function_constructor(operator, *args, **kwargs):
       def _function():
+        view = Krita().instance().activeWindow().activeView()
+        view.showFloatingMessage(self.actionMenuEntry, self.icon, 1000, 2)
         return operator(*args, **kwargs)
       return _function
     return _function_constructor(self.operator, *self.operator_args, **self.operator_kwargs)
