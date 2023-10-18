@@ -4,7 +4,7 @@ from krita import Extension
 from .expander_function import ExpanderFunction
 from .scale_to_zoom_function import ScaleToZoomFunction
 from .layer_toggle_function import (LayerToggleFunction, LayerIsolateFunction)
-from . import action_definitions
+from .action_definitions import BuildActionInstances
 
 class CanvasExpander(Extension):
 
@@ -22,15 +22,11 @@ class CanvasExpander(Extension):
                 return operator(*args, **kwargs)
             return _function
 
-        _action_list = tuple(getattr(action_definitions, n)
-                             for n in dir(action_definitions) if n.startswith('Action'))
+        _action_list = BuildActionInstances()
 
-        for _action_def in _action_list:
-            _action_id = f'pykrita_canvas_expander_{_action_def.extenstionID}'
-            _action_triggered_name = f'action_triggered_{_action_def.extenstionID}'
-            setattr(self, _action_triggered_name, _function_constructor(
-                _action_def.operator, *_action_def.operator_args, **_action_def.operator_kwargs))
+        for _action_def_instance in _action_list:
+            setattr(self, _action_def_instance.actionTriggerName, _action_def_instance.construct())
 
-            action = window.createAction(_action_id, _action_def.menuEntry, "tools/scripts")
-            action.triggered.connect(getattr(self, _action_triggered_name))
+            action = window.createAction(_action_def_instance.actionIdentifier, _action_def_instance.actionMenuEntry, "tools/scripts")
+            action.triggered.connect(getattr(self, _action_def_instance.actionTriggerName))
 
