@@ -1,9 +1,6 @@
 # BBD's Krita Script Starter Feb 2018
 
 from krita import Extension
-from .expander_function import ExpanderFunction
-from .scale_to_zoom_function import ScaleToZoomFunction
-from .layer_toggle_function import (LayerToggleFunction, LayerIsolateFunction)
 from .action_definitions import BuildActionInstances
 
 class CanvasExpander(Extension):

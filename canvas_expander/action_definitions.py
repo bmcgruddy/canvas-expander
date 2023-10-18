@@ -2,10 +2,10 @@ import importlib
 _krita_module = importlib.util.find_spec('krita')
 
 if _krita_module:
-  from .expander_function import ExpanderFunction as _operator_expander
-  from .scale_to_zoom_function import ScaleToZoomFunction as _operator_scale_to_zoom
-  from .layer_toggle_function import LayerToggleFunction as _operator_visibility_toggle
-  from .layer_toggle_function import LayerIsolateFunction as _operator_layer_toggle
+  from .operators import ExpanderFunction as _operator_expander
+  from .operators import ScaleToZoomFunction as _operator_scale_to_zoom
+  from .operators import LayerToggleFunction as _operator_visibility_toggle
+  from .operators import LayerIsolateFunction as _operator_layer_toggle
 else:
   _operator_expander = None
   _operator_scale_to_zoom = None
