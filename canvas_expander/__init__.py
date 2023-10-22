@@ -2,6 +2,7 @@ import importlib
 _krita_module = importlib.util.find_spec('krita')
 
 if _krita_module:
+  from krita import Krita
   from .canvas_expander import CanvasExpander
 
   # And add the extension to Krita's list of extensions:

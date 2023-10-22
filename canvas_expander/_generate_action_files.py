@@ -3,33 +3,31 @@
 
 import os
 from jinja2 import Template
-from .action_definitions import BuildActionInstances
+from .action_definitions import BuildSortedActions
 
 ACTION_TEMPLATE="""<?xml version="1.0" encoding="UTF-8"?>
 <ActionCollection version="2" name="Scripts">
+  {% for categoryName, actions in sorted_actions.items() %}
     <Actions category="Scripts">
-        <text>Canvas Expander</text>
-
+        <text>Canvas Expander: {{ categoryName }}</text>
+        {% for action in actions %}
         <Action name="{{ action.actionIdentifier }}">
-        <icon></icon>
-        <text>Canvas Expander</text>
-        <whatsThis></whatsThis>
-        <toolTip></toolTip>
-        <iconText></iconText>
-        <activationFlags>10000</activationFlags>
-        <activationConditions>1</activationConditions>
-        <shortcut></shortcut>
-        <isCheckable>false</isCheckable>
-        <statusTip></statusTip>
+        <toolTip>{{ action.toolTip }}</toolTip>
+        <statusTip>{{ action.toolTip }}</statusTip>
+        <activationFlags>1</activationFlags>
         </Action>
+        {% endfor %}
     </Actions>
+  {% endfor %}
 </ActionCollection>
 """
 
+_sorted_actions = BuildSortedActions()
 
-for _action in BuildActionInstances():
-  _template = Template(ACTION_TEMPLATE)
-  _render = _template.render(action=_action)
-  _file_path = f'./canvas_expander/actions/{_action.actionIdentifier}.action'
-  with open(_file_path, 'w') as _f:
-    _f.write(_render)
+_template = Template(ACTION_TEMPLATE)
+_render = _template.render(sorted_actions=_sorted_actions)
+_file_path = f'./canvas_expander/canvas_expander.action'
+
+print(_render)
+with open(_file_path, 'w') as _f:
+  _f.write(_render)
