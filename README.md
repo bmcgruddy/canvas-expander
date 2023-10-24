@@ -32,11 +32,9 @@ Otherwise you see tranparent areas where the document has expanded.
 - **Cycle between**; switch between affected layer(s) having only one visible at a time.
 
 > **Notes**  
-> Most to all layer operations have a by **selected**, **color**, **active color** variant.
-
-> Currently color based operations ignore layers with no color set to them.
-
-> To uniformly change state often the average of affected layers of visibility is used. This is to help make it more reliable but does not eliminate edge ceases where it get it wrong... in other words press it again it should get right the second time.
+> Most to all layer operations have a by **selected**, **color**, **active color** variant.  
+> Currently color based operations ignore layers with no color set to them.  
+> To uniformly change state often the average of affected layers of visibility is used. This is to help make it more reliable but does not eliminate edge ceases where it get it wrong... in other words press it again it should get right the second time.  
 
 ## Usage & Shortcuts
 To get the most of this extension its advised to set shortcuts for the tools most used for muscle memory.
