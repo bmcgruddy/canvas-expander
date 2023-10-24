@@ -6,12 +6,20 @@ if _krita_module:
   from .operators import ScaleToZoomFunction as _operator_scale_to_zoom
   from .operators import LayerToggleFunction as _operator_visibility_toggle
   from .operators import LayerIsolateFunction as _operator_layer_toggle
+  from .operators import LayerCycleFunction as _operator_layer_cycle
+  from .operators import LayerCycleByActiveLayerColorFunction as _operator_active_cycle
+  from .operators import LayerIsolateByActiveLayerColorFunction as _operator_active_isolate
+  from .operators import LayerToggleByActiveLayerColorFunction as _operator_active_toggle
   from krita import *
 else:
   _operator_expander = None
   _operator_scale_to_zoom = None
   _operator_visibility_toggle = None
   _operator_layer_toggle = None
+  _operator_layer_cycle = None
+  _operator_active_cycle = None
+  _operator_active_isolate = None
+  _operator_active_toggle = None
 
 class BaseAction:
   categoryName = 'Tool'
@@ -112,6 +120,12 @@ class ActionToggleByColorSelected(BaseCategoryVisibility):
   operator_kwargs = { 'color_index' : -1 }
   toolTip = 'Toggle visibility for selected layer(s).'
 
+class ActionToggleByActiveColor(BaseCategoryVisibility):
+  actionName = 'layer_toggle_active_color'
+  actionNameFull = 'Toggle By Active Color'
+  operator = _operator_active_toggle
+  toolTip = 'Toggle visibility for all same colored layer(s).'
+
 class ActionToggleByColorBlue(BaseCategoryVisibility):
   actionName = 'layer_toggle_blue'
   actionNameFull = 'Toggle Blue Layers'
@@ -175,6 +189,12 @@ class ActionIsolateBySelected(BaseCategoryVisibility):
   operator_kwargs = { 'color_index' : -1 }
   toolTip = 'Toggle isolate selected layer(s).'
 
+class ActionIsolateByActiveColor(BaseCategoryVisibility):
+  actionName = 'layer_isolate_active_color'
+  actionNameFull = 'Isolate By Active Color'
+  operator = _operator_active_isolate
+  toolTip = 'Toggle isolate for all similarly colored layer(s).'
+
 class ActionIsolateByColorBlue(BaseCategoryVisibility):
   actionName = 'layer_isolate_blue'
   actionNameFull = 'Isolate Blue Layers'
@@ -230,6 +250,75 @@ class ActionIsolateByColorGrey(BaseCategoryVisibility):
   operator = _operator_layer_toggle
   operator_kwargs = { 'color_index' : 8 }
   toolTip = 'Toggle isolate all grey colored layer(s).'
+
+class ActionCycleBySelected(BaseCategoryVisibility):
+  actionName = 'layer_cycle_selected'
+  actionNameFull = 'Cycle Selected Layers'
+  operator = _operator_layer_cycle
+  operator_kwargs = { 'color_index' : -1 }
+  toolTip = 'Cycle between selected layer(s).'
+
+class ActionCycleByActiveColor(BaseCategoryVisibility):
+  actionName = 'layer_cycle_active_color'
+  actionNameFull = 'Cycle Between Active Color'
+  operator = _operator_active_cycle
+  toolTip = 'Cycle between all similarly colored layer(s).'
+
+class ActionCycleByColorBlue(BaseCategoryVisibility):
+  actionName = 'layer_cycle_blue'
+  actionNameFull = 'Cycle Blue Layers'
+  operator = _operator_layer_cycle
+  operator_kwargs = { 'color_index' : 1 }
+  toolTip = 'Cycle between all blue colored layer(s).'
+
+class ActionCycleByColorGreen(BaseCategoryVisibility):
+  actionName = 'layer_cycle_green'
+  actionNameFull = 'Cycle Green Layers'
+  operator = _operator_layer_cycle
+  operator_kwargs = { 'color_index' : 2 }
+  toolTip = 'Cycle between all green colored layer(s).'
+
+class ActionCycleByColorYellow(BaseCategoryVisibility):
+  actionName = 'layer_cycle_yellow'
+  actionNameFull = 'Cycle Yellow Layers'
+  operator = _operator_layer_cycle
+  operator_kwargs = { 'color_index' : 3 }
+  toolTip = 'Cycle between all yellow colored layer(s).'
+
+class ActionCycleByColorOrange(BaseCategoryVisibility):
+  actionName = 'layer_cycle_orange'
+  actionNameFull = 'Cycle Orange Layers'
+  operator = _operator_layer_cycle
+  operator_kwargs = { 'color_index' : 4 }
+  toolTip = 'Cycle between all orange colored layer(s).'
+
+class ActionCycleByColorBrown(BaseCategoryVisibility):
+  actionName = 'layer_cycle_brown'
+  actionNameFull = 'Cycle Brown Layers'
+  operator = _operator_layer_cycle
+  operator_kwargs = { 'color_index' : 5 }
+  toolTip = 'Cycle between all brown colored layer(s).'
+
+class ActionCycleByColorRed(BaseCategoryVisibility):
+  actionName = 'layer_cycle_red'
+  actionNameFull = 'Cycle Red Layers'
+  operator = _operator_layer_cycle
+  operator_kwargs = { 'color_index' : 6 }
+  toolTip = 'Cycle between all red colored layer(s).'
+
+class ActionCycleByColorPurple(BaseCategoryVisibility):
+  actionName = 'layer_cycle_purple'
+  actionNameFull = 'Cycle Purple Layers'
+  operator = _operator_layer_cycle
+  operator_kwargs = { 'color_index' : 7 }
+  toolTip = 'Cycle between all purple colored layer(s).'
+
+class ActionCycleByColorGrey(BaseCategoryVisibility):
+  actionName = 'layer_cycle_grey'
+  actionNameFull = 'Cycle Grey Layers'
+  operator = _operator_layer_cycle
+  operator_kwargs = { 'color_index' : 8 }
+  toolTip = 'Cycle between all grey colored layer(s).'
 
 def BuildActionInstances():
   _action_list = ()

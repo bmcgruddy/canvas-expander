@@ -1,4 +1,5 @@
 from krita import Krita
+from krita import QItemSelectionModel, QTreeView
 
 def _is_nodes_visible(nodes):
   return bool(True if sum(n.visible() for n in nodes) >= len(nodes) else False)
@@ -58,3 +59,67 @@ def LayerIsolateFunction(*args, color_index : int = -1, **kwargs):
     _node.setVisible( not _other_nodes_visible)
 
   documement.refreshProjection()
+
+def LayerCycleFunction(*args, color_index : int = -1, direction : int = -1, **kwargs):
+  instance = Krita.instance()
+  documement = instance.activeDocument()
+  window = instance.activeWindow()
+
+  _kisLayerBox = next(d for d in window.dockers() if d.objectName() == 'KisLayerBox')
+  _listLayers = _kisLayerBox.findChild(QTreeView, 'listLayers')
+  _model = _listLayers.model()
+  _sModel = _listLayers.selectionModel()
+  _sModelCurrent = _sModel.selectedIndexes()
+
+  if color_index == -1:
+    _nodes = window.activeView().selectedNodes()
+  else:
+    _nodes = _get_nodes_by_color(documement, color_index)
+
+  _current_active_index = -1
+  _active_layer = documement.activeNode()
+  
+  for (_loop_index, _loop_node) in enumerate(_nodes):
+    if _loop_node.uniqueId() == _active_layer.uniqueId():
+      _current_active_index = _loop_index
+      break
+  
+  if _current_active_index == -1:
+    for (_loop_index, _loop_node) in enumerate(_nodes):
+      if _loop_node.visible():
+        _current_active_index = _loop_index
+        break
+  
+  if _current_active_index == -1:
+    _current_active_index = 0
+
+  _next_active_index = (_current_active_index + direction) % len(_nodes)
+  for (_loop_index, _loop_node) in enumerate(_nodes):
+    if _loop_index == _next_active_index:
+      documement.setActiveNode(_loop_node)
+      _loop_node.setVisible(True)
+    else:
+      _loop_node.setVisible(False)
+
+  if color_index == -1:
+    for _x in _sModelCurrent:
+      _sModel.select(_x, QItemSelectionModel.Select)
+
+  documement.refreshProjection()
+  
+
+def LayerToggleByActiveLayerColorFunction(*args, **kwargs):
+  instance = Krita.instance()
+  documement = instance.activeDocument()
+  _active_node_color_index = documement.activeNode().colorLabel()
+  return LayerToggleFunction(*args, color_index = _active_node_color_index, **kwargs)
+def LayerIsolateByActiveLayerColorFunction(*args, **kwargs):
+  instance = Krita.instance()
+  documement = instance.activeDocument()
+  _active_node_color_index = documement.activeNode().colorLabel()
+  return LayerIsolateFunction(*args, color_index = _active_node_color_index, **kwargs)
+def LayerCycleByActiveLayerColorFunction(*args, **kwargs):
+  instance = Krita.instance()
+  documement = instance.activeDocument()
+  _active_node_color_index = documement.activeNode().colorLabel()
+  return LayerCycleFunction(*args, color_index = _active_node_color_index, **kwargs)

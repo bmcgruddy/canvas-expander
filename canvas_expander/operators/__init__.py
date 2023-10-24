@@ -2,3 +2,7 @@ from .expander_function import ExpanderFunction
 from .scale_to_zoom_function import ScaleToZoomFunction
 from .layer_toggle_function import LayerToggleFunction
 from .layer_toggle_function import LayerIsolateFunction
+from .layer_toggle_function import LayerCycleFunction
+from .layer_toggle_function import LayerToggleByActiveLayerColorFunction
+from .layer_toggle_function import LayerIsolateByActiveLayerColorFunction
+from .layer_toggle_function import LayerCycleByActiveLayerColorFunction

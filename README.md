@@ -13,8 +13,8 @@ A [krita](https://krita.org/) extension that supplies helpful canvas related ope
 - **Grow to View & Paint Layers**; psudo infinte canvas. Grow the document to contain both paint layers and view.
 Simply run this action after panning to area you wish to start drawing but have ran out of canvas space.
 > Note:  
-> You will need to either set an opaque background color for the document, or create a fill layer with a desired background color.
-Otherwise you see tranparent areas where the document has expanded, as it makes no changes to the layers.
+> You will need to either set an opaque background color for the document, or create a **fill layer** with a desired background color.
+Otherwise you see tranparent areas where the document has expanded.
 
 - **Crop to Active Layer**; its "Trim To Current Layer" minus the destructive "trimming".
 - **Crop to Selected Layer(s)**; like above but crops to all layers checked.
@@ -51,6 +51,7 @@ Tools > Scripts > Canvas Expander > Crop to Viewport
 Tools > Scripts > Canvas Expander > Crop to Selection
 Tools > Scripts > Canvas Expander > Scale Image By Zoom Level
 Tools > Scripts > Canvas Expander > Toggle Selected Layers
+Tools > Scripts > Canvas Expander > Toggle By Active Color
 Tools > Scripts > Canvas Expander > Toggle Blue Layers
 Tools > Scripts > Canvas Expander > Toggle Green Layers
 Tools > Scripts > Canvas Expander > Toggle Yellow Layers
@@ -60,6 +61,7 @@ Tools > Scripts > Canvas Expander > Toggle Red Layers
 Tools > Scripts > Canvas Expander > Toggle Purple Layers
 Tools > Scripts > Canvas Expander > Toggle Grey Layers
 Tools > Scripts > Canvas Expander > Isolate Selected Layers
+Tools > Scripts > Canvas Expander > Isolate By Active Color
 Tools > Scripts > Canvas Expander > Isolate Blue Layers
 Tools > Scripts > Canvas Expander > Isolate Green Layers
 Tools > Scripts > Canvas Expander > Isolate Yellow Layers
@@ -68,6 +70,16 @@ Tools > Scripts > Canvas Expander > Isolate Brown Layers
 Tools > Scripts > Canvas Expander > Isolate Red Layers
 Tools > Scripts > Canvas Expander > Isolate Purple Layers
 Tools > Scripts > Canvas Expander > Isolate Grey Layers
+Tools > Scripts > Canvas Expander > Cycle Selected Layers
+Tools > Scripts > Canvas Expander > Cycle Between Active Color
+Tools > Scripts > Canvas Expander > Cycle Blue Layers
+Tools > Scripts > Canvas Expander > Cycle Green Layers
+Tools > Scripts > Canvas Expander > Cycle Yellow Layers
+Tools > Scripts > Canvas Expander > Cycle Orange Layers
+Tools > Scripts > Canvas Expander > Cycle Brown Layers
+Tools > Scripts > Canvas Expander > Cycle Red Layers
+Tools > Scripts > Canvas Expander > Cycle Purple Layers
+Tools > Scripts > Canvas Expander > Cycle Grey Layers
 ```
 
 ## Installation

@@ -31,3 +31,7 @@ _file_path = f'./canvas_expander/canvas_expander.action'
 print(_render)
 with open(_file_path, 'w') as _f:
   _f.write(_render)
+
+for (categoryName, actionObjects) in _sorted_actions.items():
+  for _action_def_instance in actionObjects:
+    print(f'Tools > Scripts > Canvas Expander > {_action_def_instance.actionNameFull.replace("&&", "&")}')
