@@ -25,7 +25,7 @@ def ScaleToZoomFunction(*args, **kwargs):
   _zoom = c_zoom * w_devicePixelRatioF / (d_resolution/72)
 
   if round(_zoom, 2) == 1.0:
-    return False
+    return (False, "No need to scale zoom level is 100%.")
 
   _width = int(d_width * _zoom)
   _height = int(d_height * _zoom)
@@ -34,5 +34,7 @@ def ScaleToZoomFunction(*args, **kwargs):
   window.activeView().canvas().setZoomLevel(1.0)
   scroll.horizontalScrollBar().setValue(s_horizontal)
   scroll.verticalScrollBar().setValue(s_vertical)
+
   documement.refreshProjection()
-  return True
+
+  return (True, f'Scaled {_zoom}')

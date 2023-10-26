@@ -10,18 +10,19 @@ def _get_nodes_by_color(documement, color_index : int):
     if n.colorLabel() == color_index
   )
 
-def LayerToggleFunction(*args, color_index : int = -1, value : int = -1, refreshProjection : bool = True,  **kwargs):
+def LayerToggleFunction(*args, color_index : int = -1, value : int = -1,  **kwargs):
   instance = Krita.instance()
   documement = instance.activeDocument()
   window = instance.activeWindow()
 
+  
   if color_index == -1:
     _nodes = window.activeView().selectedNodes()
   else:
     _nodes = _get_nodes_by_color(documement, color_index)
 
   if not _nodes:
-    return False
+    return (False, "No layers in group.")
 
   _is_visible = _is_nodes_visible(_nodes)
   _set_visible = not _is_visible
@@ -31,8 +32,12 @@ def LayerToggleFunction(*args, color_index : int = -1, value : int = -1, refresh
   for _node in _nodes:
       _node.setVisible(_set_visible)
 
-  if refreshProjection:
-    documement.refreshProjection()
+  _v = 'visible' if _set_visible else 'hidden'
+  _sucess_message = f'{len(_nodes)} layer(s) {_v}.'
+
+  documement.refreshProjection()
+
+  return (True, _sucess_message)
 
 def LayerIsolateFunction(*args, color_index : int = -1, **kwargs):
   instance = Krita.instance()
@@ -53,12 +58,21 @@ def LayerIsolateFunction(*args, color_index : int = -1, **kwargs):
         _other_nodes = (*_other_nodes, *_get_nodes_by_color(documement, _index))
     _other_nodes_visible = _is_nodes_visible(_other_nodes)
 
+  if not _selected_nodes:
+    return (False, "No layers in group.")
+
+  if not _other_nodes:
+    return (False, "No layers to toggle.")
+
   for _node in _selected_nodes:
     _node.setVisible(True)
   for _node in _other_nodes:
     _node.setVisible( not _other_nodes_visible)
 
   documement.refreshProjection()
+
+  _v = 'hidden' if _other_nodes_visible else 'visible'
+  return (True, f'{len(_other_nodes)} layer(s) {_v}')
 
 def LayerCycleFunction(*args, color_index : int = -1, direction : int = -1, **kwargs):
   instance = Krita.instance()
@@ -75,6 +89,9 @@ def LayerCycleFunction(*args, color_index : int = -1, direction : int = -1, **kw
     _nodes = window.activeView().selectedNodes()
   else:
     _nodes = _get_nodes_by_color(documement, color_index)
+
+  if not _nodes:
+    return (False, "No layers in group.")
 
   _current_active_index = -1
   _active_layer = documement.activeNode()
@@ -106,18 +123,21 @@ def LayerCycleFunction(*args, color_index : int = -1, direction : int = -1, **kw
       _sModel.select(_x, QItemSelectionModel.Select)
 
   documement.refreshProjection()
-  
+
+  return (True, f'Cycling between {len(_nodes)} layer(s).')
 
 def LayerToggleByActiveLayerColorFunction(*args, **kwargs):
   instance = Krita.instance()
   documement = instance.activeDocument()
   _active_node_color_index = documement.activeNode().colorLabel()
   return LayerToggleFunction(*args, color_index = _active_node_color_index, **kwargs)
+
 def LayerIsolateByActiveLayerColorFunction(*args, **kwargs):
   instance = Krita.instance()
   documement = instance.activeDocument()
   _active_node_color_index = documement.activeNode().colorLabel()
   return LayerIsolateFunction(*args, color_index = _active_node_color_index, **kwargs)
+
 def LayerCycleByActiveLayerColorFunction(*args, **kwargs):
   instance = Krita.instance()
   documement = instance.activeDocument()

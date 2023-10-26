@@ -58,7 +58,7 @@ def ExpanderFunction(*args,
     _combined_bounds = _combined_bounds.united(_viewport_bounds)
 
   if not _combined_bounds:
-    return False
+    return (False, 'Bounding area is zero.')
 
   if all((
     documement.xOffset() == _combined_bounds.x(),
@@ -66,7 +66,7 @@ def ExpanderFunction(*args,
     documement.width() == _combined_bounds.width(),
     documement.height() == _combined_bounds.height(),
     )):
-    return False
+    return (False, 'Nothing to change.')
 
   # Apply combined bounding box to document.
   documement.resizeImage(
@@ -75,5 +75,7 @@ def ExpanderFunction(*args,
     _combined_bounds.width(),
     _combined_bounds.height()
   )
+  
   documement.refreshProjection()
-  return True
+
+  return (True, 'Canvas expanded.')

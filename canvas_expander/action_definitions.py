@@ -41,12 +41,20 @@ class BaseAction:
 
     super().__init__(*args, **kwargs)
 
+  @property
+  def actionNameFullSafe(self):
+    return self.actionNameFull.replace('&&', '&')
+
   def construct(self):
     def _function_constructor(operator, *args, **kwargs):
       def _function():
         view = Krita().instance().activeWindow().activeView()
-        view.showFloatingMessage(self.actionNameFull.replace('&&', '&'), self.iconLoaded, 1000, 1)
-        return operator(*args, **kwargs)
+        
+
+        (_operator_code, _operator_message) = operator(*args, **kwargs)
+        _notification_message = f'{self.actionNameFullSafe} : {_operator_message}'
+        view.showFloatingMessage(_notification_message, self.iconLoaded, 1000, 1)
+        return _operator_code
       return _function
     return _function_constructor(self.operator, *self.operator_args, **self.operator_kwargs)
 
