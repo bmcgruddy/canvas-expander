@@ -1,4 +1,6 @@
 from .expander_function import ExpanderFunction
+from .expander_function import SelectorFunction
+from .expander_function import SelectorByActiveLayerColorFunction
 from .scale_to_zoom_function import ScaleToZoomFunction
 from .layer_toggle_function import LayerToggleFunction
 from .layer_toggle_function import LayerIsolateFunction

@@ -20,18 +20,21 @@ if _krita_module:
     def createActions(self, window):
       _sorted_actions = BuildSortedActions()
 
-      action = window.createAction("CanvasExpander", "Canvas Expander", "tools/scripts")
-      menu = QtWidgets.QMenu("CanvasExpander", window.qwindow())
-      action.setMenu(menu)
+      # action = window.createAction("CanvasExpander", "Canvas Expander", "tools/scripts")
+      # menu = QtWidgets.QMenu("CanvasExpander", window.qwindow())
+      # action.setMenu(menu)
 
-      for (categoryName, actionObjects) in _sorted_actions.items():
-        # action = window.createAction(f"CanvasExpander{categoryName}", f"Canvas Expander: {categoryName}", "tools/scripts/CanvasExpander")
-        # menu = QtWidgets.QMenu(f"CanvasExpander{categoryName}", window.qwindow())
-        # action.setMenu(menu)
+      for (_, actionObjects) in _sorted_actions.items():
+        _category_identifier = actionObjects[0].categoryIdentifier
+        _category_name_full = actionObjects[0].categoryNameFull
+        
+        action = window.createAction(_category_identifier, _category_name_full, "tools/scripts/CanvasExpander")
+        menu = QtWidgets.QMenu(_category_identifier, window.qwindow())
+        action.setMenu(menu)
 
         for _action_def_instance in actionObjects:
           setattr(self, _action_def_instance.actionTriggerName, _action_def_instance.construct())
 
-          action = window.createAction(_action_def_instance.actionIdentifier, _action_def_instance.actionNameFull, f"tools/scripts/CanvasExpander")
+          action = window.createAction(_action_def_instance.actionIdentifier, _action_def_instance.actionNameFull, f"tools/scripts/{_category_identifier}")
           action.triggered.connect(getattr(self, _action_def_instance.actionTriggerName))
 

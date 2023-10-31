@@ -9,7 +9,7 @@ ACTION_TEMPLATE="""<?xml version="1.0" encoding="UTF-8"?>
 <ActionCollection version="2" name="Scripts">
   {% for categoryName, actions in sorted_actions.items() %}
     <Actions category="Scripts">
-        <text>Canvas Expander: {{ categoryName }}</text>
+        <text>{{ actions[0].categoryNameFull }}</text>
         {% for action in actions %}
         <Action name="{{ action.actionIdentifier }}">
         <toolTip>{{ action.toolTip }}</toolTip>
@@ -34,4 +34,4 @@ with open(_file_path, 'w') as _f:
 
 for (categoryName, actionObjects) in _sorted_actions.items():
   for _action_def_instance in actionObjects:
-    print(f'Tools > Scripts > Canvas Expander > {_action_def_instance.actionNameFull.replace("&&", "&")}')
+    print(f'Tools > Scripts > {_action_def_instance.categoryNameFull} > {_action_def_instance.actionNameFull.replace("&&", "&")}')
