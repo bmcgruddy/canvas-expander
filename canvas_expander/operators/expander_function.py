@@ -1,5 +1,10 @@
-from krita import Krita, Selection
-from PyQt5.QtCore import QRect
+from krita import (
+  Krita,
+  Selection,
+  QRect,
+  QRectF,
+  QTransform,
+)
 
 from .layer_toggle_function import _get_nodes_by_color
 
@@ -17,20 +22,12 @@ def _get_boundry(*args,
   documement = instance.activeDocument()
   window = instance.activeWindow()
 
-  n_active_layer = documement.activeNode()
-  c_zoom = window.activeView().canvas().zoomLevel()
-  c_dx = window.activeView().flakeToCanvasTransform().dx()
-  c_dy = window.activeView().flakeToCanvasTransform().dy()
-  w_width = window.qwindow().centralWidget().width()
-  w_height = window.qwindow().centralWidget().height()
-  d_resolution = documement.resolution()
-  w_devicePixelRatioF = window.qwindow().devicePixelRatioF()
-
   # Combine all bounding box infomation.
   _combined_bounds = QRect()
 
   if activeLayer:
-    _combined_bounds = _combined_bounds.united(n_active_layer.bounds())
+    _n_active_layer = documement.activeNode()
+    _combined_bounds = _combined_bounds.united(_n_active_layer.bounds())
 
   if selectedLayers:
     for node in window.activeView().selectedNodes():
@@ -57,12 +54,31 @@ def _get_boundry(*args,
         _combined_bounds = _combined_bounds.united(node.bounds())
       
   if viewport:
-    _zoom = c_zoom * w_devicePixelRatioF / (d_resolution/72)
-    _c_dx_a = -int(c_dx * w_devicePixelRatioF / _zoom)
-    _c_dy_a = -int(c_dy * w_devicePixelRatioF / _zoom)
-    _w_width_a = int(w_width * w_devicePixelRatioF / _zoom)
-    _w_height_a = int(w_height * w_devicePixelRatioF / _zoom)
-    _viewport_bounds = QRect(_c_dx_a, _c_dy_a, _w_width_a, _w_height_a)
+
+    # Create viewport bounds
+    _w_width = window.qwindow().centralWidget().width()
+    _w_height = window.qwindow().centralWidget().height()
+    _window_rect = QRectF(0.0, 0.0, float(_w_width), float(_w_height))
+
+    # Translate viewport bounds with inverted canvas transform.
+    _c_transform = window.activeView().flakeToCanvasTransform()
+    _c_tranform_inverted, _ = _c_transform.inverted()
+    _viewport_bounds = _c_tranform_inverted.mapRect(_window_rect)
+
+    # Translate bounds by the zoom ratio.
+    _c_zoom = window.activeView().canvas().zoomLevel()
+    _d_resolution = documement.resolution()
+    _w_devicePixelRatioF = window.qwindow().devicePixelRatioF()
+
+    _zoom = _c_zoom * _w_devicePixelRatioF / (_d_resolution/72)
+    _z_scale = _w_devicePixelRatioF / _zoom
+    _t_ratio = QTransform().scale(_z_scale,_z_scale)
+
+    _viewport_bounds = _t_ratio.mapRect(_viewport_bounds)
+
+    # Convert from QRectF to QRect
+    _viewport_bounds = _viewport_bounds.toRect()
+
     _combined_bounds = _combined_bounds.united(_viewport_bounds)
 
   if not _combined_bounds:
