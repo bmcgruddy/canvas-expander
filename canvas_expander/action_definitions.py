@@ -63,10 +63,12 @@ class BaseAction:
   def construct(self):
     def _function_constructor(operator, *args, **kwargs):
       def _function():
-        view = Krita().instance().activeWindow().activeView()
-        
+        instance = Krita.instance()
+        instance.activeDocument().waitForDone()
+        view = instance.activeWindow().activeView()
 
         (_operator_code, _operator_message) = operator(*args, **kwargs)
+        
         _notification_message = f'{self.actionNameFullSafe} : {_operator_message}'
         view.showFloatingMessage(_notification_message, self.iconLoaded, 1000, 1)
         return _operator_code
