@@ -12,6 +12,7 @@ if _krita_module:
   from .operators import LayerCycleByActiveLayerColorFunction as _operator_active_cycle
   from .operators import LayerIsolateByActiveLayerColorFunction as _operator_active_isolate
   from .operators import LayerToggleByActiveLayerColorFunction as _operator_active_toggle
+  from .operators import ReduceOpacityFunction as _operator_reduce_opacity
   from krita import *
 else:
   _operator_expander = None
@@ -24,6 +25,7 @@ else:
   _operator_active_cycle = None
   _operator_active_isolate = None
   _operator_active_toggle = None
+  _operator_reduce_opacity = None
 
 class BaseAction:
   categoryName = 'Tool'
@@ -83,6 +85,10 @@ class BaseCategorySelection(BaseAction):
   categoryName = 'Selection Operations'
   icon = 'krita_tool_transform'
 
+class BaseCategoryTransforms(BaseAction):
+  categoryName = 'Transform Operations'
+  icon = 'krita_tool_transform'
+
 class BaseCategoryVisibility(BaseAction):
   categoryName = 'Layer Visibility Operations'
   icon = 'onionOn'
@@ -136,6 +142,14 @@ class ActionExpanderSelection(BaseCategoryCanvas):
   operator_kwargs = { 'selection' : True }
   toolTip = 'Resize the canvas to fit the current selection.'
 
+# Transform function actions.
+class ActionExpanderSelection(BaseCategoryTransforms):
+  actionName = 'reduce_opacity'
+  actionNameFull = 'Half Opacity of Selection or Document Bounds (Experimental) (No Undo)'
+  operator = _operator_reduce_opacity
+  operator_args = ()
+  operator_kwargs = { }
+  toolTip = 'Reduces the opacity of selection or document bounds.'
 
 # Selector function actions.
 class ActionSelectorDefault(BaseCategorySelection):

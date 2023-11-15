@@ -34,15 +34,20 @@
         <activationFlags>1</activationFlags>
         </Action>
         
-        <Action name="pykrita_canvas_expander_selection">
-        <toolTip>Resize the canvas to fit the current selection.</toolTip>
-        <statusTip>Resize the canvas to fit the current selection.</statusTip>
-        <activationFlags>1</activationFlags>
-        </Action>
-        
         <Action name="pykrita_canvas_expander_scale_to_zoom">
         <toolTip>Scale the image by current zoom level.</toolTip>
         <statusTip>Scale the image by current zoom level.</statusTip>
+        <activationFlags>1</activationFlags>
+        </Action>
+        
+    </Actions>
+  
+    <Actions category="Scripts">
+        <text>Canvas Expander: Transform Operations</text>
+        
+        <Action name="pykrita_canvas_expander_reduce_opacity">
+        <toolTip>Reduces the opacity of selection or document bounds.</toolTip>
+        <statusTip>Reduces the opacity of selection or document bounds.</statusTip>
         <activationFlags>1</activationFlags>
         </Action>
         

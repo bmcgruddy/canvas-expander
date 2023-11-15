@@ -22,6 +22,9 @@ Otherwise you see tranparent areas where the document has expanded.
 > **Notes**  
 > The most of these operations are non destructive and none of the layer data is changed, it changes the document dimensions that frames them.
 
+### Transform Tools
+- **Half Opacity of Selection or Document Bounds (Experimental) (No Undo)**; an experimental feature due to current limitations of krita's filter api this operation does not create an undo history checkpoint and is limited to rectangular regions. Used to quickly drop the opacity of a sketch to continue drawing on top of.
+
 ### Selection Tools
 - **Select Boundary**; used to create a bounding box selection of all affected layers.
 
@@ -46,8 +49,8 @@ Tools > Scripts > Canvas Expander: Canvas Operations > Crop to Active Layer
 Tools > Scripts > Canvas Expander: Canvas Operations > Crop to Selected Layer(s)
 Tools > Scripts > Canvas Expander: Canvas Operations > Crop to Paint Layer(s)
 Tools > Scripts > Canvas Expander: Canvas Operations > Crop to Viewport
-Tools > Scripts > Canvas Expander: Canvas Operations > Crop to Selection
 Tools > Scripts > Canvas Expander: Canvas Operations > Scale Image By Zoom Level
+Tools > Scripts > Canvas Expander: Transform Operations > Half Opacity of Selection or Document Bounds (Experimental) (No Undo)
 Tools > Scripts > Canvas Expander: Selection Operations > Select Boundary Of View & Paint Layer(s)
 Tools > Scripts > Canvas Expander: Selection Operations > Select Boundary Of Active Layer
 Tools > Scripts > Canvas Expander: Selection Operations > Select Boundary Of Selected Layer(s)
@@ -92,7 +95,6 @@ Tools > Scripts > Canvas Expander: Layer Visibility Operations > Cycle By Layer 
 Tools > Scripts > Canvas Expander: Layer Visibility Operations > Cycle By Layer Color (Red)
 Tools > Scripts > Canvas Expander: Layer Visibility Operations > Cycle By Layer Color (Purple)
 Tools > Scripts > Canvas Expander: Layer Visibility Operations > Cycle By Layer Color (Grey)
-
 ```
 
 ## Installation

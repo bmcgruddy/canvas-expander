@@ -8,3 +8,4 @@ from .layer_toggle_function import LayerCycleFunction
 from .layer_toggle_function import LayerToggleByActiveLayerColorFunction
 from .layer_toggle_function import LayerIsolateByActiveLayerColorFunction
 from .layer_toggle_function import LayerCycleByActiveLayerColorFunction
+from .reduce_opacity_function import ReduceOpacityFunction
