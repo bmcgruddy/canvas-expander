@@ -99,8 +99,16 @@ class ActionExpanderDefault(BaseCategoryCanvas):
   actionNameFull = 'Grow to View && Paint Layer(s)'
   operator = _operator_expander
   operator_args = ()
-  operator_kwargs = { 'paintLayers' : True, 'viewport' : True }
+  operator_kwargs = { 'paintLayers' : True, 'viewport' : True , 'padding' : True }
   toolTip = 'Resize the canvas to fit all paint layers and viewport (psudo infinite canvas).'
+
+class ActionExpanderNoPadding(BaseCategoryCanvas):
+  actionName = 'expander'
+  actionNameFull = 'Grow to View && Paint Layer(s) (no padding)'
+  operator = _operator_expander
+  operator_args = ()
+  operator_kwargs = { 'paintLayers' : True, 'viewport' : True }
+  toolTip = 'Resize the canvas to fit all paint layers and viewport (psudo infinite canvas) (no padding).'
 
 class ActionExpanderActiveLayer(BaseCategoryCanvas):
   actionName = 'active'

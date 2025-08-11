@@ -14,6 +14,7 @@ def _get_boundry(*args,
     selectedLayers : bool = False,
     paintLayers : bool = False,
     viewport : bool = False,
+    padding : bool = False,
     color_index : int = -1,
     **kwargs
     ):
@@ -53,11 +54,12 @@ def _get_boundry(*args,
       if node.visible():
         _combined_bounds = _combined_bounds.united(node.bounds())
       
-  if viewport:
 
-    # Create viewport bounds
-    _w_width = window.qwindow().centralWidget().width()
-    _w_height = window.qwindow().centralWidget().height()
+  # Create viewport bounds
+  _w_width = window.qwindow().centralWidget().width()
+  _w_height = window.qwindow().centralWidget().height()
+
+  if viewport:
     _window_rect = QRectF(0.0, 0.0, float(_w_width), float(_w_height))
 
     # Translate viewport bounds with inverted canvas transform.
@@ -80,6 +82,11 @@ def _get_boundry(*args,
     _viewport_bounds = _viewport_bounds.toRect()
 
     _combined_bounds = _combined_bounds.united(_viewport_bounds)
+
+  if _combined_bounds and padding:
+    _v = (max(_w_width, _w_height) * .4)
+    _paddin_rect = QRectF((_combined_bounds.x() - _v), (_combined_bounds.y() - _v), (_combined_bounds.width() + (_v*2)), (_combined_bounds.height() + (_v*2))).toRect()
+    _combined_bounds = _combined_bounds.united(_paddin_rect)
 
   if not _combined_bounds:
     return (False, None, 'Bounding area is zero.')

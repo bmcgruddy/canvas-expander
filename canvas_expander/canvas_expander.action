@@ -9,6 +9,12 @@
         <statusTip>Resize the canvas to fit all paint layers and viewport (psudo infinite canvas).</statusTip>
         <activationFlags>1</activationFlags>
         </Action>
+
+        <Action name="pykrita_canvas_expander_expander">
+        <toolTip>Resize the canvas to fit all paint layers and viewport (psudo infinite canvas) (no padding).</toolTip>
+        <statusTip>Resize the canvas to fit all paint layers and viewport (psudo infinite canvas) (no padding).</statusTip>
+        <activationFlags>1</activationFlags>
+        </Action>
         
         <Action name="pykrita_canvas_expander_active">
         <toolTip>Resize the canvas to fit the current layer.</toolTip>
