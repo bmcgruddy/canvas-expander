@@ -69,13 +69,7 @@ def _get_boundry(*args,
 
     # Translate bounds by the zoom ratio.
     _c_zoom = window.activeView().canvas().zoomLevel()
-    _d_resolution = documement.resolution()
-    _w_devicePixelRatioF = window.qwindow().devicePixelRatioF()
-
-    _zoom = _c_zoom * _w_devicePixelRatioF / (_d_resolution/72)
-    _z_scale = _w_devicePixelRatioF / _zoom
-    _t_ratio = QTransform().scale(_z_scale,_z_scale)
-
+    (_t_ratio, _) = QTransform().scale(_c_zoom, _c_zoom).inverted()
     _viewport_bounds = _t_ratio.mapRect(_viewport_bounds)
 
     # Convert from QRectF to QRect
