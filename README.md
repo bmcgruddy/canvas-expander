@@ -3,8 +3,8 @@
 # Canvas Expander
 A [krita](https://krita.org/) extension that supplies helpful canvas related operations to help speed up workflow.
 
-> **Notes**
-> This extension begin its development with the 5.2.0 release of krita, cannot guarantee backwards compatibility at this time.
+> **Notes**  
+> Minimum version Krita 5.3.1, cannot guarantee backwards compatibility at this time.
 
 ## Features
 
