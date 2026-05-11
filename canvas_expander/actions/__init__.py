@@ -1,15 +1,19 @@
 from .main_actions import (
-    ActionScaleToZoom,
+    ActionExpanderActiveLayer,
     ActionExpanderDefault,
     ActionExpanderNoPadding,
-    ActionExpanderActiveLayer,
     ActionExpanderPaintLayers,
     ActionExpanderSelectedLayers,
     ActionExpanderSelection,
     ActionExpanderViewport,
+    ActionScaleToZoom,
 )
 from .transform_actions import ActionFilterReduceOpacitySelection
 from .selection_actions import (
+    ActionSelectorDefault,
+    ActionSelectorPaintLayers,
+    ActionSelectorSelectedLayers,
+    ActionSelectorViewport,
     ActionSelectorActiveLayer,
     ActionSelectorByActiveColor,
     ActionSelectorByColorBlue,
@@ -20,12 +24,9 @@ from .selection_actions import (
     ActionSelectorByColorPurple,
     ActionSelectorByColorRed,
     ActionSelectorByColorYellow,
-    ActionSelectorDefault,
-    ActionSelectorPaintLayers,
-    ActionSelectorSelectedLayers,
-    ActionSelectorViewport,
 )
 from .visibility_cycle_actions import (
+    ActionCycleBySelected,
     ActionCycleByActiveColor,
     ActionCycleByColorBlue,
     ActionCycleByColorBrown,
@@ -35,9 +36,9 @@ from .visibility_cycle_actions import (
     ActionCycleByColorPurple,
     ActionCycleByColorRed,
     ActionCycleByColorYellow,
-    ActionCycleBySelected,
 )
 from .visibility_isolate_actions import (
+    ActionIsolateBySelected,
     ActionIsolateByActiveColor,
     ActionIsolateByColorBlue,
     ActionIsolateByColorBrown,
@@ -47,35 +48,38 @@ from .visibility_isolate_actions import (
     ActionIsolateByColorPurple,
     ActionIsolateByColorRed,
     ActionIsolateByColorYellow,
-    ActionIsolateBySelected,
 )
 
 
 from .visibility_toggle_actions import (
+    ActionToggleByColorSelected,
     ActionToggleByActiveColor,
     ActionToggleByColorBlue,
     ActionToggleByColorBrown,
-    ActionToggleByColorGrey,
-    ActionToggleByColorRed,
     ActionToggleByColorGreen,
+    ActionToggleByColorGrey,
     ActionToggleByColorOrange,
     ActionToggleByColorPurple,
+    ActionToggleByColorRed,
     ActionToggleByColorYellow,
-    ActionToggleByColorSelected,
 )
 
 ActionMainList = (
-    ActionScaleToZoom,
+    ActionExpanderActiveLayer,
     ActionExpanderDefault,
     ActionExpanderNoPadding,
-    ActionExpanderActiveLayer,
     ActionExpanderPaintLayers,
     ActionExpanderSelectedLayers,
     ActionExpanderSelection,
     ActionExpanderViewport,
+    ActionScaleToZoom,
 )
 
 ActionSelectorList = (
+    ActionSelectorDefault,
+    ActionSelectorPaintLayers,
+    ActionSelectorSelectedLayers,
+    ActionSelectorViewport,
     ActionSelectorActiveLayer,
     ActionSelectorByActiveColor,
     ActionSelectorByColorBlue,
@@ -86,12 +90,9 @@ ActionSelectorList = (
     ActionSelectorByColorPurple,
     ActionSelectorByColorRed,
     ActionSelectorByColorYellow,
-    ActionSelectorDefault,
-    ActionSelectorPaintLayers,
-    ActionSelectorSelectedLayers,
-    ActionSelectorViewport,
 )
 ActionCycleList = (
+    ActionCycleBySelected,
     ActionCycleByActiveColor,
     ActionCycleByColorBlue,
     ActionCycleByColorBrown,
@@ -101,10 +102,10 @@ ActionCycleList = (
     ActionCycleByColorPurple,
     ActionCycleByColorRed,
     ActionCycleByColorYellow,
-    ActionCycleBySelected,
 )
 
 ActionIsolateList = (
+    ActionIsolateBySelected,
     ActionIsolateByActiveColor,
     ActionIsolateByColorBlue,
     ActionIsolateByColorBrown,
@@ -114,18 +115,17 @@ ActionIsolateList = (
     ActionIsolateByColorPurple,
     ActionIsolateByColorRed,
     ActionIsolateByColorYellow,
-    ActionIsolateBySelected,
 )
 ActionToggleList = (
+    ActionToggleByColorSelected,
     ActionToggleByActiveColor,
     ActionToggleByColorBlue,
     ActionToggleByColorBrown,
-    ActionToggleByColorGrey,
-    ActionToggleByColorRed,
     ActionToggleByColorGreen,
+    ActionToggleByColorGrey,
     ActionToggleByColorOrange,
     ActionToggleByColorPurple,
+    ActionToggleByColorRed,
     ActionToggleByColorYellow,
-    ActionToggleByColorSelected,
 )
 ActionTransformList = (ActionFilterReduceOpacitySelection,)

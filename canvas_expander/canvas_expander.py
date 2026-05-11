@@ -17,7 +17,7 @@ class CanvasExpander(Extension):
         pass
 
     def createActions(self, window):
-        for SubMenu, ActionDefinitions in menu_layout:
+        for SubMenu, ActionDefinitions in MenuLayout:
             # create SubMenu
             _category_identifier = f"CanvasExpander{SubMenu}".replace(" ", "")
             _category_name_full = f"Canvas Expander: {SubMenu}"
@@ -31,6 +31,13 @@ class CanvasExpander(Extension):
 
             # Create Actions
             for ActionDefinition in ActionDefinitions:
+                if type(ActionDefinition) is str:
+                    menu.addSection(ActionDefinition)
+                    continue
+                elif ActionDefinition is None:
+                    menu.addSeparator()
+                    continue
+
                 definition = ActionDefinition()
                 action = window.createAction(
                     definition.actionIdentifier,
@@ -39,4 +46,7 @@ class CanvasExpander(Extension):
                 )
                 if definition.icon:
                     action.setIcon(definition.actionIcon)
+
                 action.triggered.connect(definition.construct())
+
+                menu.addAction(action)
