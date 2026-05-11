@@ -43,59 +43,95 @@ To get the most of this extension its advised to set shortcuts for the tools mos
 But here are the menu paths to gain access to provided tools.
 
 ### Menu entries
+#### Expand Operators
 ```
+Tools > Scripts > Canvas Expander: Canvas Operations > Scale Image By Zoom Level
 Tools > Scripts > Canvas Expander: Canvas Operations > Grow to View & Paint Layer(s)
+Tools > Scripts > Canvas Expander: Canvas Operations > Grow to View & Paint Layer(s) (no padding)
+```
+#### Crop Operations
+```
 Tools > Scripts > Canvas Expander: Canvas Operations > Crop to Active Layer
 Tools > Scripts > Canvas Expander: Canvas Operations > Crop to Selected Layer(s)
 Tools > Scripts > Canvas Expander: Canvas Operations > Crop to Paint Layer(s)
 Tools > Scripts > Canvas Expander: Canvas Operations > Crop to Viewport
-Tools > Scripts > Canvas Expander: Canvas Operations > Scale Image By Zoom Level
-Tools > Scripts > Canvas Expander: Transform Operations > Half Opacity of Selection or Document Bounds (Experimental) (No Undo)
-Tools > Scripts > Canvas Expander: Selection Operations > Select Boundary Of View & Paint Layer(s)
-Tools > Scripts > Canvas Expander: Selection Operations > Select Boundary Of Active Layer
-Tools > Scripts > Canvas Expander: Selection Operations > Select Boundary Of Selected Layer(s)
-Tools > Scripts > Canvas Expander: Selection Operations > Select Boundary Of Paint Layer(s)
+Tools > Scripts > Canvas Expander: Canvas Operations > Crop to Selection
+```
+
+#### Select Operators
+```
 Tools > Scripts > Canvas Expander: Selection Operations > Select Boundary Of Viewport
+Tools > Scripts > Canvas Expander: Selection Operations > Select Boundary Of Active Layer
+Tools > Scripts > Canvas Expander: Selection Operations > Select Boundary Of View & Paint Layer(s)
+Tools > Scripts > Canvas Expander: Selection Operations > Select Boundary Of Paint Layer(s)
+Tools > Scripts > Canvas Expander: Selection Operations > Select Boundary Of Selected Layer(s)
+```
+
+
+#### Select By Color
+```
 Tools > Scripts > Canvas Expander: Selection Operations > Select Boundary By Active Layer Color
 Tools > Scripts > Canvas Expander: Selection Operations > Select Boundary By Layer Color (Blue)
-Tools > Scripts > Canvas Expander: Selection Operations > Select Boundary By Layer Color (Green)
-Tools > Scripts > Canvas Expander: Selection Operations > Select Boundary By Layer Color (Yellow)
-Tools > Scripts > Canvas Expander: Selection Operations > Select Boundary By Layer Color (Orange)
 Tools > Scripts > Canvas Expander: Selection Operations > Select Boundary By Layer Color (Brown)
-Tools > Scripts > Canvas Expander: Selection Operations > Select Boundary By Layer Color (Red)
-Tools > Scripts > Canvas Expander: Selection Operations > Select Boundary By Layer Color (Purple)
+Tools > Scripts > Canvas Expander: Selection Operations > Select Boundary By Layer Color (Green)
 Tools > Scripts > Canvas Expander: Selection Operations > Select Boundary By Layer Color (Grey)
-Tools > Scripts > Canvas Expander: Layer Visibility Operations > Toggle Selected Layer(s)
-Tools > Scripts > Canvas Expander: Layer Visibility Operations > Toggle By Active Layer Color
-Tools > Scripts > Canvas Expander: Layer Visibility Operations > Toggle By Layer Color (Blue)
-Tools > Scripts > Canvas Expander: Layer Visibility Operations > Toggle By Layer Color (Green)
-Tools > Scripts > Canvas Expander: Layer Visibility Operations > Toggle By Layer Color (Yellow)
-Tools > Scripts > Canvas Expander: Layer Visibility Operations > Toggle By Layer Color (Orange)
-Tools > Scripts > Canvas Expander: Layer Visibility Operations > Toggle By Layer Color (Brown)
-Tools > Scripts > Canvas Expander: Layer Visibility Operations > Toggle By Layer Color (Red)
-Tools > Scripts > Canvas Expander: Layer Visibility Operations > Toggle By Layer Color (Purple)
-Tools > Scripts > Canvas Expander: Layer Visibility Operations > Toggle By Layer Color (Grey)
-Tools > Scripts > Canvas Expander: Layer Visibility Operations > Isolate Selected Layer(s)
-Tools > Scripts > Canvas Expander: Layer Visibility Operations > Isolate By Active Layer Color
-Tools > Scripts > Canvas Expander: Layer Visibility Operations > Isolate By Layer Color (Blue)
-Tools > Scripts > Canvas Expander: Layer Visibility Operations > Isolate By Layer Color (Green)
-Tools > Scripts > Canvas Expander: Layer Visibility Operations > Isolate By Layer Color (Yellow)
-Tools > Scripts > Canvas Expander: Layer Visibility Operations > Isolate By Layer Color (Orange)
-Tools > Scripts > Canvas Expander: Layer Visibility Operations > Isolate By Layer Color (Brown)
-Tools > Scripts > Canvas Expander: Layer Visibility Operations > Isolate By Layer Color (Red)
-Tools > Scripts > Canvas Expander: Layer Visibility Operations > Isolate By Layer Color (Purple)
-Tools > Scripts > Canvas Expander: Layer Visibility Operations > Isolate By Layer Color (Grey)
+Tools > Scripts > Canvas Expander: Selection Operations > Select Boundary By Layer Color (Orange)
+Tools > Scripts > Canvas Expander: Selection Operations > Select Boundary By Layer Color (Purple)
+Tools > Scripts > Canvas Expander: Selection Operations > Select Boundary By Layer Color (Red)
+Tools > Scripts > Canvas Expander: Selection Operations > Select Boundary By Layer Color (Yellow)
+```
+
+
+#### Transform Operations
+```
+Tools > Scripts > Canvas Expander: Transform Operations > Half Opacity of Selection or Document Bounds (Experimental) (No Undo)
+```
+
+
+#### Cycle Layers
+```
 Tools > Scripts > Canvas Expander: Layer Visibility Operations > Cycle Selected Layer(s)
 Tools > Scripts > Canvas Expander: Layer Visibility Operations > Cycle Between Active Layer Color
 Tools > Scripts > Canvas Expander: Layer Visibility Operations > Cycle By Layer Color (Blue)
-Tools > Scripts > Canvas Expander: Layer Visibility Operations > Cycle By Layer Color (Green)
-Tools > Scripts > Canvas Expander: Layer Visibility Operations > Cycle By Layer Color (Yellow)
-Tools > Scripts > Canvas Expander: Layer Visibility Operations > Cycle By Layer Color (Orange)
 Tools > Scripts > Canvas Expander: Layer Visibility Operations > Cycle By Layer Color (Brown)
-Tools > Scripts > Canvas Expander: Layer Visibility Operations > Cycle By Layer Color (Red)
-Tools > Scripts > Canvas Expander: Layer Visibility Operations > Cycle By Layer Color (Purple)
+Tools > Scripts > Canvas Expander: Layer Visibility Operations > Cycle By Layer Color (Green)
 Tools > Scripts > Canvas Expander: Layer Visibility Operations > Cycle By Layer Color (Grey)
+Tools > Scripts > Canvas Expander: Layer Visibility Operations > Cycle By Layer Color (Orange)
+Tools > Scripts > Canvas Expander: Layer Visibility Operations > Cycle By Layer Color (Purple)
+Tools > Scripts > Canvas Expander: Layer Visibility Operations > Cycle By Layer Color (Red)
+Tools > Scripts > Canvas Expander: Layer Visibility Operations > Cycle By Layer Color (Yellow)
 ```
+
+
+#### Toggle Layers
+```
+Tools > Scripts > Canvas Expander: Layer Visibility Operations > Toggle Selected Layer(s)
+Tools > Scripts > Canvas Expander: Layer Visibility Operations > Toggle By Active Layer Color
+Tools > Scripts > Canvas Expander: Layer Visibility Operations > Toggle By Layer Color (Blue)
+Tools > Scripts > Canvas Expander: Layer Visibility Operations > Toggle By Layer Color (Brown)
+Tools > Scripts > Canvas Expander: Layer Visibility Operations > Toggle By Layer Color (Green)
+Tools > Scripts > Canvas Expander: Layer Visibility Operations > Toggle By Layer Color (Grey)
+Tools > Scripts > Canvas Expander: Layer Visibility Operations > Toggle By Layer Color (Orange)
+Tools > Scripts > Canvas Expander: Layer Visibility Operations > Toggle By Layer Color (Purple)
+Tools > Scripts > Canvas Expander: Layer Visibility Operations > Toggle By Layer Color (Red)
+Tools > Scripts > Canvas Expander: Layer Visibility Operations > Toggle By Layer Color (Yellow)
+```
+
+
+#### Isolate Layers
+```
+Tools > Scripts > Canvas Expander: Layer Visibility Operations > Isolate Selected Layer(s)
+Tools > Scripts > Canvas Expander: Layer Visibility Operations > Isolate By Active Layer Color
+Tools > Scripts > Canvas Expander: Layer Visibility Operations > Isolate By Layer Color (Blue)
+Tools > Scripts > Canvas Expander: Layer Visibility Operations > Isolate By Layer Color (Brown)
+Tools > Scripts > Canvas Expander: Layer Visibility Operations > Isolate By Layer Color (Green)
+Tools > Scripts > Canvas Expander: Layer Visibility Operations > Isolate By Layer Color (Grey)
+Tools > Scripts > Canvas Expander: Layer Visibility Operations > Isolate By Layer Color (Orange)
+Tools > Scripts > Canvas Expander: Layer Visibility Operations > Isolate By Layer Color (Purple)
+Tools > Scripts > Canvas Expander: Layer Visibility Operations > Isolate By Layer Color (Red)
+Tools > Scripts > Canvas Expander: Layer Visibility Operations > Isolate By Layer Color (Yellow)
+```
+
 
 ## Installation
 Krita's [own guide](https://docs.krita.org/en/user_manual/python_scripting/install_custom_python_plugin.html)
