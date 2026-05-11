@@ -2,11 +2,28 @@ from krita import (
     Krita,
     Selection,
     QRect,
-    QRectF,
-    QTransform,
+    Window,
 )
 
 from .layer_toggle_function import _get_nodes_by_color
+
+
+# Used to get the transformed dimentions of the "visiable" area of the canvas,
+# scaled and tranformed based on zoom and scroll.
+def _get_viewport_bounds(window: Window) -> QRect:
+    # Get centralWidget dimentions (QRect)
+    _viewport_bounds = window.qwindow().centralWidget().rect()
+
+    # Translate inverted flakeToCanvasTransform.
+    _c_transform = window.activeView().flakeToCanvasTransform()
+    _c_tranform_inverted, _ = _c_transform.inverted()
+    _viewport_bounds = _c_tranform_inverted.mapRect(_viewport_bounds)
+
+    # Translate flakeToImageTransform.
+    _c_transform = window.activeView().flakeToImageTransform()
+    _viewport_bounds = _c_transform.mapRect(_viewport_bounds)
+
+    return _viewport_bounds
 
 
 def _get_boundry(
@@ -52,37 +69,15 @@ def _get_boundry(
             if node.visible():
                 _combined_bounds = _combined_bounds.united(node.bounds())
 
-    # Create viewport bounds
-    _w_width = window.qwindow().centralWidget().width()
-    _w_height = window.qwindow().centralWidget().height()
-
+    _viewport_bounds = _get_viewport_bounds(window)
     if viewport:
-        _window_rect = QRectF(0.0, 0.0, float(_w_width), float(_w_height))
-
-        # Translate viewport bounds with inverted canvas transform.
-        _c_transform = window.activeView().flakeToCanvasTransform()
-        _c_tranform_inverted, _ = _c_transform.inverted()
-        _viewport_bounds = _c_tranform_inverted.mapRect(_window_rect)
-
-        # Translate bounds by the zoom ratio.
-        _c_zoom = window.activeView().canvas().zoomLevel()
-        (_t_ratio, _) = QTransform().scale(_c_zoom, _c_zoom).inverted()
-        _viewport_bounds = _t_ratio.mapRect(_viewport_bounds)
-
-        # Convert from QRectF to QRect
-        _viewport_bounds = _viewport_bounds.toRect()
-
         _combined_bounds = _combined_bounds.united(_viewport_bounds)
 
     if _combined_bounds and padding:
-        _v = max(_w_width, _w_height) * 0.4
-        _paddin_rect = QRectF(
-            (_combined_bounds.x() - _v),
-            (_combined_bounds.y() - _v),
-            (_combined_bounds.width() + (_v * 2)),
-            (_combined_bounds.height() + (_v * 2)),
-        ).toRect()
-        _combined_bounds = _combined_bounds.united(_paddin_rect)
+        _i_padding = int(
+            max(_viewport_bounds.width(), _viewport_bounds.height()) * 0.25
+        )
+        _combined_bounds.adjust(-_i_padding, -_i_padding, _i_padding, _i_padding)
 
     if not _combined_bounds:
         return (False, None, "Bounding area is zero.")
