@@ -1,4 +1,4 @@
-from krita import Extension, QtWidgets, QIcon
+from krita import Extension, QtWidgets
 from .menu_layout import MenuLayout
 
 import os
