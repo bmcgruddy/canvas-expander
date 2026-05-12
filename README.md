@@ -1,7 +1,12 @@
 
 
 # Canvas Expander
-A [krita](https://krita.org/) extension that supplies helpful canvas related operations to help speed up workflow.
+A [krita](https://krita.org/) extension that supplies helpful canvas related operations to help speed up workflow.  
+
+To get the most out this extension it is advised that you assign shortcuts to the operations that take your fancy.  
+
+Personally for example I have “Grow to View & Paint Layer(s)” bound to “W” and “Scale Image By Zoom Level” as “Shift + W”.
+As with my workflow, I’m constantly re-framing sketches, making collages and every major art piece I scale up for a redraw.  
 
 > **Notes**  
 > Minimum version Krita 5.3.1, cannot guarantee backwards compatibility at this time.
