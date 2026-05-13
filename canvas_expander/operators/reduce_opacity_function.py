@@ -13,7 +13,7 @@ def ReduceOpacityFunction(
 
     selection = documement.selection()
     if not selection:
-        return (False, "No selection to transform")
+        return (False, "No selection")
 
     nodes = []
     if selectedLayersOnly:
@@ -25,6 +25,9 @@ def ReduceOpacityFunction(
         for node in documement.rootNode().findChildNodes("", True, True, "paintlayer"):
             if not node.locked():
                 nodes.append(node)
+
+    if not nodes:
+        return (False, "No unlocked paint layers")
 
     for node in nodes:
         documement.setActiveNode(node)
