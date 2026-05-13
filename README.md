@@ -28,7 +28,7 @@ Otherwise you see tranparent areas where the document has expanded.
 > The most of these operations are non destructive and none of the layer data is changed, it changes the document dimensions that frames them.
 
 ### Transform Tools
-- **Half Opacity of Selection or Document Bounds (Experimental) (No Undo)**; an experimental feature due to current limitations of krita's filter api this operation does not create an undo history checkpoint and is limited to rectangular regions. Used to quickly drop the opacity of a sketch to continue drawing on top of.
+- **Half Opacity Of Selected Area**; (*destructive*) used to quickly drop the opacity of a sketch to continue drawing on top off.
 
 ### Selection Tools
 - **Select Boundary**; used to create a bounding box selection of all affected layers.
@@ -89,7 +89,8 @@ Tools > Scripts > Canvas Expander: Selection Operations > Select Boundary By Lay
 
 #### Transform Operations
 ```
-Tools > Scripts > Canvas Expander: Transform Operations > Half Opacity of Selection or Document Bounds (Experimental) (No Undo)
+Tools > Scripts > Canvas Expander: Transform Operations > Half Opacity Of Selected Area (selected layers)
+Tools > Scripts > Canvas Expander: Transform Operations > Half Opacity Of Selected Area (all paint layers)
 ```
 
 
