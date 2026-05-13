@@ -8,7 +8,10 @@ from .main_actions import (
     ActionExpanderViewport,
     ActionScaleToZoom,
 )
-from .transform_actions import ActionFilterReduceOpacitySelection
+from .transform_actions import (
+    ActionFilterReduceOpacitySelection,
+    ActionFilterReduceOpacitySelectionAllPaintLayers,
+)
 from .selection_actions import (
     ActionSelectorDefault,
     ActionSelectorPaintLayers,
@@ -128,4 +131,7 @@ ActionToggleList = (
     ActionToggleByColorRed,
     ActionToggleByColorYellow,
 )
-ActionTransformList = (ActionFilterReduceOpacitySelection,)
+ActionTransformList = (
+    ActionFilterReduceOpacitySelection,
+    ActionFilterReduceOpacitySelectionAllPaintLayers,
+)

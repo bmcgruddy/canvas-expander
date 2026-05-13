@@ -1,39 +1,44 @@
 from krita import Krita
 
 
-def ReduceOpacityFunction(*args, **kwargs):
+def ReduceOpacityFunction(
+    *args,
+    selectedLayersOnly: bool = False,
+    **kwargs,
+):
     instance = Krita.instance()
     documement = instance.activeDocument()
     window = instance.activeWindow()
+    originalActiveNode = documement.activeNode()
 
-    _x = 0
-    _y = 0
-    _w = documement.width()
-    _h = documement.height()
     selection = documement.selection()
-    if selection:
-        _x = selection.x()
-        _y = selection.y()
-        _w = selection.width()
-        _h = selection.height()
+    if not selection:
+        return (False, "No selection to transform")
 
-    _levelFilter = instance.filter("levels")
-    _levelFilterConfig = _levelFilter.configuration()
-    _levelFilterConfig.setProperty("mode", "channels")
-    _levelFilterConfig.setProperty("number_of_channels", 8)
-    _levelFilterConfig.setProperty("channel_0", "0;1;1;0;1")
-    _levelFilterConfig.setProperty("channel_1", "0;1;1;0;1")
-    _levelFilterConfig.setProperty("channel_2", "0;1;1;0;1")
-    _levelFilterConfig.setProperty("channel_3", "0;1;1;0;1")
-    _levelFilterConfig.setProperty("channel_4", "0;1;1;0;0.5")
-    _levelFilterConfig.setProperty("channel_5", "0;1;1;0;1")
-    _levelFilterConfig.setProperty("channel_6", "0;1;1;0;1")
-    _levelFilterConfig.setProperty("channel_7", "0;1;1;0;1")
-    _levelFilter.setConfiguration(_levelFilterConfig)
+    nodes = []
+    if selectedLayersOnly:
+        for node in window.activeView().selectedNodes():
+            if node.type() == "paintlayer":
+                if not node.locked():
+                    nodes.append(node)
+    else:
+        for node in documement.rootNode().findChildNodes("", True, True, "paintlayer"):
+            if not node.locked():
+                nodes.append(node)
 
-    for node in window.activeView().selectedNodes():
-        _levelFilter.apply(node, _x, _y, _w, _h)
+    for node in nodes:
+        documement.setActiveNode(node)
+        documement.setSelection(selection)
+        instance.action("edit_cut").trigger()
+        documement.waitForDone()
+        instance.action("edit_paste").trigger()
+        documement.waitForDone()
+        documement.activeNode().setOpacity(128)
+        instance.action("merge_layer").trigger()
+        documement.waitForDone()
 
+    documement.setSelection(selection)
+    documement.setActiveNode(originalActiveNode)
     documement.refreshProjection()
 
     return (True, "Complete")
