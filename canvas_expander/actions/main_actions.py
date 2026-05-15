@@ -8,7 +8,7 @@ class ActionScaleToZoom(BaseAction):
     actionNameFull = "Scale Image By Zoom Level"
     operator = ScaleToZoomFunction
     toolTip = "Scale the image by current zoom level."
-    icon = "zoom-in"
+    icon = "canvas-expander-scale-to-zoom"
 
 
 class ActionExpanderDefault(BaseAction):
