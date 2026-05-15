@@ -15,6 +15,7 @@ class BaseAction:
     operator_kwargs = {}
     actionIcon: QIcon = QIcon()
     icon = None
+    activationFlags = "1"
 
     def __init__(self, *args, **kwargs):
         self.actionIdentifier = f"pykrita_canvas_expander_{self.actionName}"

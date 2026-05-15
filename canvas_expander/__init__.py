@@ -1,13 +1,13 @@
-import importlib
+from krita import Krita
+from .canvas_expander import CanvasExpander
+from ._generate_action_file import GenerateActionFile
 
-_krita_module = importlib.util.find_spec("krita")
 
-if _krita_module:
-    from krita import Krita
-    from .canvas_expander import CanvasExpander
+GenerateActionFile()
 
-    # And add the extension to Krita's list of extensions:
-    app = Krita.instance()
-    # Instantiate your class:
-    extension = CanvasExpander(parent=app)
-    app.addExtension(extension)
+
+# And add the extension to Krita's list of extensions:
+app = Krita.instance()
+# Instantiate your class:
+extension = CanvasExpander(parent=app)
+app.addExtension(extension)
