@@ -32,4 +32,5 @@ def GenerateActionFile():
             ActionCollection.append(Actions)
 
         tree = ET.ElementTree(ActionCollection)
+        ET.indent(tree, space="\t", level=0)
         tree.write(action_file, xml_declaration=True, encoding="utf-8")

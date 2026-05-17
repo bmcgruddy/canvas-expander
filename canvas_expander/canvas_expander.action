@@ -1,2 +1,285 @@
 <?xml version='1.0' encoding='utf-8'?>
-<ActionCollection version="2" name="Canvas Expander"><Actions category="Canvas Operations"><text>Canvas Operations</text><Action name="pykrita_canvas_expander_scale_to_zoom"><toolTip>Scale the image by current zoom level.</toolTip><statusTip>Scale the image by current zoom level.</statusTip><activationFlags>1</activationFlags></Action><Action name="pykrita_canvas_expander_default"><toolTip>Resize the canvas to fit all paint layers and viewport (psudo infinite canvas).</toolTip><statusTip>Resize the canvas to fit all paint layers and viewport (psudo infinite canvas).</statusTip><activationFlags>1</activationFlags></Action><Action name="pykrita_canvas_expander_expander"><toolTip>Resize the canvas to fit all paint layers and viewport (psudo infinite canvas) (no padding).</toolTip><statusTip>Resize the canvas to fit all paint layers and viewport (psudo infinite canvas) (no padding).</statusTip><activationFlags>1</activationFlags></Action><Action name="pykrita_canvas_expander_active"><toolTip>Resize the canvas to fit the current layer.</toolTip><statusTip>Resize the canvas to fit the current layer.</statusTip><activationFlags>1</activationFlags></Action><Action name="pykrita_canvas_expander_selected_layers"><toolTip>Resize the canvas to fit all selected layer(s).</toolTip><statusTip>Resize the canvas to fit all selected layer(s).</statusTip><activationFlags>1</activationFlags></Action><Action name="pykrita_canvas_expander_paint_layers"><toolTip>Resize the canvas to fit all paint layer(s).</toolTip><statusTip>Resize the canvas to fit all paint layer(s).</statusTip><activationFlags>1</activationFlags></Action><Action name="pykrita_canvas_expander_viewport"><toolTip>Resize the canvas to match the viewport (fast crop).</toolTip><statusTip>Resize the canvas to match the viewport (fast crop).</statusTip><activationFlags>1</activationFlags></Action><Action name="pykrita_canvas_expander_selection"><toolTip>Resize the canvas to fit the current selection.</toolTip><statusTip>Resize the canvas to fit the current selection.</statusTip><activationFlags>1</activationFlags></Action></Actions><Actions category="Selection Operations"><text>Selection Operations</text><Action name="pykrita_canvas_expander_selector_viewport"><toolTip>Make a selection based of the viewport.</toolTip><statusTip>Make a selection based of the viewport.</statusTip><activationFlags>1</activationFlags></Action><Action name="pykrita_canvas_expander_selector_active"><toolTip>Make a selection based on the current layer.</toolTip><statusTip>Make a selection based on the current layer.</statusTip><activationFlags>1</activationFlags></Action><Action name="pykrita_canvas_expander_selector_default"><toolTip>Make a selection based on all paint layers and viewport.</toolTip><statusTip>Make a selection based on all paint layers and viewport.</statusTip><activationFlags>1</activationFlags></Action><Action name="pykrita_canvas_expander_selector_paint_layers"><toolTip>Make a selection based on all paint layer(s).</toolTip><statusTip>Make a selection based on all paint layer(s).</statusTip><activationFlags>1</activationFlags></Action><Action name="pykrita_canvas_expander_selector_selected_layers"><toolTip>Make a selection based on all selected layer(s).</toolTip><statusTip>Make a selection based on all selected layer(s).</statusTip><activationFlags>1</activationFlags></Action><Action name="pykrita_canvas_expander_selector_layer_active_color"><toolTip>Select the combind boundary for all layer(s) that match the active layer's color.</toolTip><statusTip>Select the combind boundary for all layer(s) that match the active layer's color.</statusTip><activationFlags>1</activationFlags></Action><Action name="pykrita_canvas_expander_selector_layer_blue"><toolTip>Select the combind boundary of all blue colored layer(s).</toolTip><statusTip>Select the combind boundary of all blue colored layer(s).</statusTip><activationFlags>1</activationFlags></Action><Action name="pykrita_canvas_expander_selector_layer_brown"><toolTip>Select combind boundary of all brown colored layer(s).</toolTip><statusTip>Select combind boundary of all brown colored layer(s).</statusTip><activationFlags>1</activationFlags></Action><Action name="pykrita_canvas_expander_selector_layer_green"><toolTip>Select the combind boundary of all green colored layer(s).</toolTip><statusTip>Select the combind boundary of all green colored layer(s).</statusTip><activationFlags>1</activationFlags></Action><Action name="pykrita_canvas_expander_selector_layer_grey"><toolTip>Select combind boundary of all grey colored layer(s).</toolTip><statusTip>Select combind boundary of all grey colored layer(s).</statusTip><activationFlags>1</activationFlags></Action><Action name="pykrita_canvas_expander_selector_layer_orange"><toolTip>Select combind boundary of all orange colored layer(s).</toolTip><statusTip>Select combind boundary of all orange colored layer(s).</statusTip><activationFlags>1</activationFlags></Action><Action name="pykrita_canvas_expander_selector_layer_purple"><toolTip>Select combind boundary of all purple colored layer(s).</toolTip><statusTip>Select combind boundary of all purple colored layer(s).</statusTip><activationFlags>1</activationFlags></Action><Action name="pykrita_canvas_expander_selector_layer_red"><toolTip>Select combind boundary of all red colored layer(s).</toolTip><statusTip>Select combind boundary of all red colored layer(s).</statusTip><activationFlags>1</activationFlags></Action><Action name="pykrita_canvas_expander_selector_layer_yellow"><toolTip>Select combind boundary of all yellow colored layer(s).</toolTip><statusTip>Select combind boundary of all yellow colored layer(s).</statusTip><activationFlags>1</activationFlags></Action></Actions><Actions category="Transform Operations"><text>Transform Operations</text><Action name="pykrita_canvas_expander_reduce_opacity_selected_layers"><toolTip>Reduces the opacity of selection.</toolTip><statusTip>Reduces the opacity of selection.</statusTip><activationFlags>1</activationFlags></Action><Action name="pykrita_canvas_expander_reduce_opacity_all_paint_layers"><toolTip>Reduces the opacity of selection.</toolTip><statusTip>Reduces the opacity of selection.</statusTip><activationFlags>1</activationFlags></Action></Actions><Actions category="Layer Visibility Operations"><text>Layer Visibility Operations</text><Action name="pykrita_canvas_expander_layer_cycle_selected"><toolTip>Cycle between selected layer(s).</toolTip><statusTip>Cycle between selected layer(s).</statusTip><activationFlags>1</activationFlags></Action><Action name="pykrita_canvas_expander_layer_cycle_active_color"><toolTip>Cycle between all similarly colored layer(s).</toolTip><statusTip>Cycle between all similarly colored layer(s).</statusTip><activationFlags>1</activationFlags></Action><Action name="pykrita_canvas_expander_layer_cycle_blue"><toolTip>Cycle between all blue colored layer(s).</toolTip><statusTip>Cycle between all blue colored layer(s).</statusTip><activationFlags>1</activationFlags></Action><Action name="pykrita_canvas_expander_layer_cycle_brown"><toolTip>Cycle between all brown colored layer(s).</toolTip><statusTip>Cycle between all brown colored layer(s).</statusTip><activationFlags>1</activationFlags></Action><Action name="pykrita_canvas_expander_layer_cycle_green"><toolTip>Cycle between all green colored layer(s).</toolTip><statusTip>Cycle between all green colored layer(s).</statusTip><activationFlags>1</activationFlags></Action><Action name="pykrita_canvas_expander_layer_cycle_grey"><toolTip>Cycle between all grey colored layer(s).</toolTip><statusTip>Cycle between all grey colored layer(s).</statusTip><activationFlags>1</activationFlags></Action><Action name="pykrita_canvas_expander_layer_cycle_orange"><toolTip>Cycle between all orange colored layer(s).</toolTip><statusTip>Cycle between all orange colored layer(s).</statusTip><activationFlags>1</activationFlags></Action><Action name="pykrita_canvas_expander_layer_cycle_purple"><toolTip>Cycle between all purple colored layer(s).</toolTip><statusTip>Cycle between all purple colored layer(s).</statusTip><activationFlags>1</activationFlags></Action><Action name="pykrita_canvas_expander_layer_cycle_red"><toolTip>Cycle between all red colored layer(s).</toolTip><statusTip>Cycle between all red colored layer(s).</statusTip><activationFlags>1</activationFlags></Action><Action name="pykrita_canvas_expander_layer_cycle_yellow"><toolTip>Cycle between all yellow colored layer(s).</toolTip><statusTip>Cycle between all yellow colored layer(s).</statusTip><activationFlags>1</activationFlags></Action><Action name="pykrita_canvas_expander_layer_toggle_selected"><toolTip>Toggle visibility for selected layer(s).</toolTip><statusTip>Toggle visibility for selected layer(s).</statusTip><activationFlags>1</activationFlags></Action><Action name="pykrita_canvas_expander_layer_toggle_active_color"><toolTip>Toggle visibility for all same colored layer(s).</toolTip><statusTip>Toggle visibility for all same colored layer(s).</statusTip><activationFlags>1</activationFlags></Action><Action name="pykrita_canvas_expander_layer_toggle_blue"><toolTip>Toggle visibility for all blue colored layer(s).</toolTip><statusTip>Toggle visibility for all blue colored layer(s).</statusTip><activationFlags>1</activationFlags></Action><Action name="pykrita_canvas_expander_layer_toggle_brown"><toolTip>Toggle visibility for all brown colored layer(s).</toolTip><statusTip>Toggle visibility for all brown colored layer(s).</statusTip><activationFlags>1</activationFlags></Action><Action name="pykrita_canvas_expander_layer_toggle_green"><toolTip>Toggle visibility for all green colored layer(s).</toolTip><statusTip>Toggle visibility for all green colored layer(s).</statusTip><activationFlags>1</activationFlags></Action><Action name="pykrita_canvas_expander_layer_toggle_grey"><toolTip>Toggle visibility for all grey colored layer(s).</toolTip><statusTip>Toggle visibility for all grey colored layer(s).</statusTip><activationFlags>1</activationFlags></Action><Action name="pykrita_canvas_expander_layer_toggle_orange"><toolTip>Toggle visibility for all orange colored layer(s).</toolTip><statusTip>Toggle visibility for all orange colored layer(s).</statusTip><activationFlags>1</activationFlags></Action><Action name="pykrita_canvas_expander_layer_toggle_purple"><toolTip>Toggle visibility for all purple colored layer(s).</toolTip><statusTip>Toggle visibility for all purple colored layer(s).</statusTip><activationFlags>1</activationFlags></Action><Action name="pykrita_canvas_expander_layer_toggle_red"><toolTip>Toggle visibility for all red colored layer(s).</toolTip><statusTip>Toggle visibility for all red colored layer(s).</statusTip><activationFlags>1</activationFlags></Action><Action name="pykrita_canvas_expander_layer_toggle_yellow"><toolTip>Toggle visibility for all yellow colored layer(s).</toolTip><statusTip>Toggle visibility for all yellow colored layer(s).</statusTip><activationFlags>1</activationFlags></Action><Action name="pykrita_canvas_expander_layer_isolate_selected"><toolTip>Toggle isolate selected layer(s).</toolTip><statusTip>Toggle isolate selected layer(s).</statusTip><activationFlags>1</activationFlags></Action><Action name="pykrita_canvas_expander_layer_isolate_active_color"><toolTip>Toggle isolate for all similarly colored layer(s).</toolTip><statusTip>Toggle isolate for all similarly colored layer(s).</statusTip><activationFlags>1</activationFlags></Action><Action name="pykrita_canvas_expander_layer_isolate_blue"><toolTip>Toggle isolate all blue colored layer(s).</toolTip><statusTip>Toggle isolate all blue colored layer(s).</statusTip><activationFlags>1</activationFlags></Action><Action name="pykrita_canvas_expander_layer_isolate_brown"><toolTip>Toggle isolate all brown colored layer(s).</toolTip><statusTip>Toggle isolate all brown colored layer(s).</statusTip><activationFlags>1</activationFlags></Action><Action name="pykrita_canvas_expander_layer_isolate_green"><toolTip>Toggle isolate all green colored layer(s).</toolTip><statusTip>Toggle isolate all green colored layer(s).</statusTip><activationFlags>1</activationFlags></Action><Action name="pykrita_canvas_expander_layer_isolate_grey"><toolTip>Toggle isolate all grey colored layer(s).</toolTip><statusTip>Toggle isolate all grey colored layer(s).</statusTip><activationFlags>1</activationFlags></Action><Action name="pykrita_canvas_expander_layer_isolate_orange"><toolTip>Toggle isolate all orange colored layer(s).</toolTip><statusTip>Toggle isolate all orange colored layer(s).</statusTip><activationFlags>1</activationFlags></Action><Action name="pykrita_canvas_expander_layer_isolate_purple"><toolTip>Toggle isolate all purple colored layer(s).</toolTip><statusTip>Toggle isolate all purple colored layer(s).</statusTip><activationFlags>1</activationFlags></Action><Action name="pykrita_canvas_expander_layer_isolate_red"><toolTip>Toggle isolate all red colored layer(s).</toolTip><statusTip>Toggle isolate all red colored layer(s).</statusTip><activationFlags>1</activationFlags></Action><Action name="pykrita_canvas_expander_layer_isolate_yellow"><toolTip>Toggle isolate all yellow colored layer(s).</toolTip><statusTip>Toggle isolate all yellow colored layer(s).</statusTip><activationFlags>1</activationFlags></Action></Actions></ActionCollection>
+<ActionCollection version="2" name="Canvas Expander">
+	<Actions category="Canvas Operations">
+		<text>Canvas Operations</text>
+		<Action name="pykrita_canvas_expander_scale_to_zoom">
+			<toolTip>Scale the image by current zoom level.</toolTip>
+			<statusTip>Scale the image by current zoom level.</statusTip>
+			<activationFlags>1</activationFlags>
+		</Action>
+		<Action name="pykrita_canvas_expander_default">
+			<toolTip>Resize the canvas to fit all paint layers and viewport (psudo infinite canvas).</toolTip>
+			<statusTip>Resize the canvas to fit all paint layers and viewport (psudo infinite canvas).</statusTip>
+			<activationFlags>1</activationFlags>
+		</Action>
+		<Action name="pykrita_canvas_expander_expander">
+			<toolTip>Resize the canvas to fit all paint layers and viewport (psudo infinite canvas) (no padding).</toolTip>
+			<statusTip>Resize the canvas to fit all paint layers and viewport (psudo infinite canvas) (no padding).</statusTip>
+			<activationFlags>1</activationFlags>
+		</Action>
+		<Action name="pykrita_canvas_expander_active">
+			<toolTip>Resize the canvas to fit the current layer.</toolTip>
+			<statusTip>Resize the canvas to fit the current layer.</statusTip>
+			<activationFlags>1</activationFlags>
+		</Action>
+		<Action name="pykrita_canvas_expander_selected_layers">
+			<toolTip>Resize the canvas to fit all selected layer(s).</toolTip>
+			<statusTip>Resize the canvas to fit all selected layer(s).</statusTip>
+			<activationFlags>1</activationFlags>
+		</Action>
+		<Action name="pykrita_canvas_expander_paint_layers">
+			<toolTip>Resize the canvas to fit all paint layer(s).</toolTip>
+			<statusTip>Resize the canvas to fit all paint layer(s).</statusTip>
+			<activationFlags>1</activationFlags>
+		</Action>
+		<Action name="pykrita_canvas_expander_viewport">
+			<toolTip>Resize the canvas to match the viewport (fast crop).</toolTip>
+			<statusTip>Resize the canvas to match the viewport (fast crop).</statusTip>
+			<activationFlags>1</activationFlags>
+		</Action>
+		<Action name="pykrita_canvas_expander_selection">
+			<toolTip>Resize the canvas to fit the current selection.</toolTip>
+			<statusTip>Resize the canvas to fit the current selection.</statusTip>
+			<activationFlags>1</activationFlags>
+		</Action>
+	</Actions>
+	<Actions category="Selection Operations">
+		<text>Selection Operations</text>
+		<Action name="pykrita_canvas_expander_selector_viewport">
+			<toolTip>Make a selection based of the viewport.</toolTip>
+			<statusTip>Make a selection based of the viewport.</statusTip>
+			<activationFlags>1</activationFlags>
+		</Action>
+		<Action name="pykrita_canvas_expander_selector_active">
+			<toolTip>Make a selection based on the current layer.</toolTip>
+			<statusTip>Make a selection based on the current layer.</statusTip>
+			<activationFlags>1</activationFlags>
+		</Action>
+		<Action name="pykrita_canvas_expander_selector_default">
+			<toolTip>Make a selection based on all paint layers and viewport.</toolTip>
+			<statusTip>Make a selection based on all paint layers and viewport.</statusTip>
+			<activationFlags>1</activationFlags>
+		</Action>
+		<Action name="pykrita_canvas_expander_selector_paint_layers">
+			<toolTip>Make a selection based on all paint layer(s).</toolTip>
+			<statusTip>Make a selection based on all paint layer(s).</statusTip>
+			<activationFlags>1</activationFlags>
+		</Action>
+		<Action name="pykrita_canvas_expander_selector_selected_layers">
+			<toolTip>Make a selection based on all selected layer(s).</toolTip>
+			<statusTip>Make a selection based on all selected layer(s).</statusTip>
+			<activationFlags>1</activationFlags>
+		</Action>
+		<Action name="pykrita_canvas_expander_selector_layer_active_color">
+			<toolTip>Select the combind boundary for all layer(s) that match the active layer's color.</toolTip>
+			<statusTip>Select the combind boundary for all layer(s) that match the active layer's color.</statusTip>
+			<activationFlags>1</activationFlags>
+		</Action>
+		<Action name="pykrita_canvas_expander_selector_layer_blue">
+			<toolTip>Select the combind boundary of all blue colored layer(s).</toolTip>
+			<statusTip>Select the combind boundary of all blue colored layer(s).</statusTip>
+			<activationFlags>1</activationFlags>
+		</Action>
+		<Action name="pykrita_canvas_expander_selector_layer_brown">
+			<toolTip>Select combind boundary of all brown colored layer(s).</toolTip>
+			<statusTip>Select combind boundary of all brown colored layer(s).</statusTip>
+			<activationFlags>1</activationFlags>
+		</Action>
+		<Action name="pykrita_canvas_expander_selector_layer_green">
+			<toolTip>Select the combind boundary of all green colored layer(s).</toolTip>
+			<statusTip>Select the combind boundary of all green colored layer(s).</statusTip>
+			<activationFlags>1</activationFlags>
+		</Action>
+		<Action name="pykrita_canvas_expander_selector_layer_grey">
+			<toolTip>Select combind boundary of all grey colored layer(s).</toolTip>
+			<statusTip>Select combind boundary of all grey colored layer(s).</statusTip>
+			<activationFlags>1</activationFlags>
+		</Action>
+		<Action name="pykrita_canvas_expander_selector_layer_orange">
+			<toolTip>Select combind boundary of all orange colored layer(s).</toolTip>
+			<statusTip>Select combind boundary of all orange colored layer(s).</statusTip>
+			<activationFlags>1</activationFlags>
+		</Action>
+		<Action name="pykrita_canvas_expander_selector_layer_purple">
+			<toolTip>Select combind boundary of all purple colored layer(s).</toolTip>
+			<statusTip>Select combind boundary of all purple colored layer(s).</statusTip>
+			<activationFlags>1</activationFlags>
+		</Action>
+		<Action name="pykrita_canvas_expander_selector_layer_red">
+			<toolTip>Select combind boundary of all red colored layer(s).</toolTip>
+			<statusTip>Select combind boundary of all red colored layer(s).</statusTip>
+			<activationFlags>1</activationFlags>
+		</Action>
+		<Action name="pykrita_canvas_expander_selector_layer_yellow">
+			<toolTip>Select combind boundary of all yellow colored layer(s).</toolTip>
+			<statusTip>Select combind boundary of all yellow colored layer(s).</statusTip>
+			<activationFlags>1</activationFlags>
+		</Action>
+	</Actions>
+	<Actions category="Transform Operations">
+		<text>Transform Operations</text>
+		<Action name="pykrita_canvas_expander_reduce_opacity_selected_layers">
+			<toolTip>Reduces the opacity of selection.</toolTip>
+			<statusTip>Reduces the opacity of selection.</statusTip>
+			<activationFlags>1</activationFlags>
+		</Action>
+		<Action name="pykrita_canvas_expander_reduce_opacity_all_paint_layers">
+			<toolTip>Reduces the opacity of selection.</toolTip>
+			<statusTip>Reduces the opacity of selection.</statusTip>
+			<activationFlags>1</activationFlags>
+		</Action>
+	</Actions>
+	<Actions category="Layer Visibility Operations">
+		<text>Layer Visibility Operations</text>
+		<Action name="pykrita_canvas_expander_layer_cycle_selected">
+			<toolTip>Cycle between selected layer(s).</toolTip>
+			<statusTip>Cycle between selected layer(s).</statusTip>
+			<activationFlags>1</activationFlags>
+		</Action>
+		<Action name="pykrita_canvas_expander_layer_cycle_active_color">
+			<toolTip>Cycle between all similarly colored layer(s).</toolTip>
+			<statusTip>Cycle between all similarly colored layer(s).</statusTip>
+			<activationFlags>1</activationFlags>
+		</Action>
+		<Action name="pykrita_canvas_expander_layer_cycle_blue">
+			<toolTip>Cycle between all blue colored layer(s).</toolTip>
+			<statusTip>Cycle between all blue colored layer(s).</statusTip>
+			<activationFlags>1</activationFlags>
+		</Action>
+		<Action name="pykrita_canvas_expander_layer_cycle_brown">
+			<toolTip>Cycle between all brown colored layer(s).</toolTip>
+			<statusTip>Cycle between all brown colored layer(s).</statusTip>
+			<activationFlags>1</activationFlags>
+		</Action>
+		<Action name="pykrita_canvas_expander_layer_cycle_green">
+			<toolTip>Cycle between all green colored layer(s).</toolTip>
+			<statusTip>Cycle between all green colored layer(s).</statusTip>
+			<activationFlags>1</activationFlags>
+		</Action>
+		<Action name="pykrita_canvas_expander_layer_cycle_grey">
+			<toolTip>Cycle between all grey colored layer(s).</toolTip>
+			<statusTip>Cycle between all grey colored layer(s).</statusTip>
+			<activationFlags>1</activationFlags>
+		</Action>
+		<Action name="pykrita_canvas_expander_layer_cycle_orange">
+			<toolTip>Cycle between all orange colored layer(s).</toolTip>
+			<statusTip>Cycle between all orange colored layer(s).</statusTip>
+			<activationFlags>1</activationFlags>
+		</Action>
+		<Action name="pykrita_canvas_expander_layer_cycle_purple">
+			<toolTip>Cycle between all purple colored layer(s).</toolTip>
+			<statusTip>Cycle between all purple colored layer(s).</statusTip>
+			<activationFlags>1</activationFlags>
+		</Action>
+		<Action name="pykrita_canvas_expander_layer_cycle_red">
+			<toolTip>Cycle between all red colored layer(s).</toolTip>
+			<statusTip>Cycle between all red colored layer(s).</statusTip>
+			<activationFlags>1</activationFlags>
+		</Action>
+		<Action name="pykrita_canvas_expander_layer_cycle_yellow">
+			<toolTip>Cycle between all yellow colored layer(s).</toolTip>
+			<statusTip>Cycle between all yellow colored layer(s).</statusTip>
+			<activationFlags>1</activationFlags>
+		</Action>
+		<Action name="pykrita_canvas_expander_layer_toggle_selected">
+			<toolTip>Toggle visibility for selected layer(s).</toolTip>
+			<statusTip>Toggle visibility for selected layer(s).</statusTip>
+			<activationFlags>1</activationFlags>
+		</Action>
+		<Action name="pykrita_canvas_expander_layer_toggle_active_color">
+			<toolTip>Toggle visibility for all same colored layer(s).</toolTip>
+			<statusTip>Toggle visibility for all same colored layer(s).</statusTip>
+			<activationFlags>1</activationFlags>
+		</Action>
+		<Action name="pykrita_canvas_expander_layer_toggle_blue">
+			<toolTip>Toggle visibility for all blue colored layer(s).</toolTip>
+			<statusTip>Toggle visibility for all blue colored layer(s).</statusTip>
+			<activationFlags>1</activationFlags>
+		</Action>
+		<Action name="pykrita_canvas_expander_layer_toggle_brown">
+			<toolTip>Toggle visibility for all brown colored layer(s).</toolTip>
+			<statusTip>Toggle visibility for all brown colored layer(s).</statusTip>
+			<activationFlags>1</activationFlags>
+		</Action>
+		<Action name="pykrita_canvas_expander_layer_toggle_green">
+			<toolTip>Toggle visibility for all green colored layer(s).</toolTip>
+			<statusTip>Toggle visibility for all green colored layer(s).</statusTip>
+			<activationFlags>1</activationFlags>
+		</Action>
+		<Action name="pykrita_canvas_expander_layer_toggle_grey">
+			<toolTip>Toggle visibility for all grey colored layer(s).</toolTip>
+			<statusTip>Toggle visibility for all grey colored layer(s).</statusTip>
+			<activationFlags>1</activationFlags>
+		</Action>
+		<Action name="pykrita_canvas_expander_layer_toggle_orange">
+			<toolTip>Toggle visibility for all orange colored layer(s).</toolTip>
+			<statusTip>Toggle visibility for all orange colored layer(s).</statusTip>
+			<activationFlags>1</activationFlags>
+		</Action>
+		<Action name="pykrita_canvas_expander_layer_toggle_purple">
+			<toolTip>Toggle visibility for all purple colored layer(s).</toolTip>
+			<statusTip>Toggle visibility for all purple colored layer(s).</statusTip>
+			<activationFlags>1</activationFlags>
+		</Action>
+		<Action name="pykrita_canvas_expander_layer_toggle_red">
+			<toolTip>Toggle visibility for all red colored layer(s).</toolTip>
+			<statusTip>Toggle visibility for all red colored layer(s).</statusTip>
+			<activationFlags>1</activationFlags>
+		</Action>
+		<Action name="pykrita_canvas_expander_layer_toggle_yellow">
+			<toolTip>Toggle visibility for all yellow colored layer(s).</toolTip>
+			<statusTip>Toggle visibility for all yellow colored layer(s).</statusTip>
+			<activationFlags>1</activationFlags>
+		</Action>
+		<Action name="pykrita_canvas_expander_layer_isolate_selected">
+			<toolTip>Toggle isolate selected layer(s).</toolTip>
+			<statusTip>Toggle isolate selected layer(s).</statusTip>
+			<activationFlags>1</activationFlags>
+		</Action>
+		<Action name="pykrita_canvas_expander_layer_isolate_active_color">
+			<toolTip>Toggle isolate for all similarly colored layer(s).</toolTip>
+			<statusTip>Toggle isolate for all similarly colored layer(s).</statusTip>
+			<activationFlags>1</activationFlags>
+		</Action>
+		<Action name="pykrita_canvas_expander_layer_isolate_blue">
+			<toolTip>Toggle isolate all blue colored layer(s).</toolTip>
+			<statusTip>Toggle isolate all blue colored layer(s).</statusTip>
+			<activationFlags>1</activationFlags>
+		</Action>
+		<Action name="pykrita_canvas_expander_layer_isolate_brown">
+			<toolTip>Toggle isolate all brown colored layer(s).</toolTip>
+			<statusTip>Toggle isolate all brown colored layer(s).</statusTip>
+			<activationFlags>1</activationFlags>
+		</Action>
+		<Action name="pykrita_canvas_expander_layer_isolate_green">
+			<toolTip>Toggle isolate all green colored layer(s).</toolTip>
+			<statusTip>Toggle isolate all green colored layer(s).</statusTip>
+			<activationFlags>1</activationFlags>
+		</Action>
+		<Action name="pykrita_canvas_expander_layer_isolate_grey">
+			<toolTip>Toggle isolate all grey colored layer(s).</toolTip>
+			<statusTip>Toggle isolate all grey colored layer(s).</statusTip>
+			<activationFlags>1</activationFlags>
+		</Action>
+		<Action name="pykrita_canvas_expander_layer_isolate_orange">
+			<toolTip>Toggle isolate all orange colored layer(s).</toolTip>
+			<statusTip>Toggle isolate all orange colored layer(s).</statusTip>
+			<activationFlags>1</activationFlags>
+		</Action>
+		<Action name="pykrita_canvas_expander_layer_isolate_purple">
+			<toolTip>Toggle isolate all purple colored layer(s).</toolTip>
+			<statusTip>Toggle isolate all purple colored layer(s).</statusTip>
+			<activationFlags>1</activationFlags>
+		</Action>
+		<Action name="pykrita_canvas_expander_layer_isolate_red">
+			<toolTip>Toggle isolate all red colored layer(s).</toolTip>
+			<statusTip>Toggle isolate all red colored layer(s).</statusTip>
+			<activationFlags>1</activationFlags>
+		</Action>
+		<Action name="pykrita_canvas_expander_layer_isolate_yellow">
+			<toolTip>Toggle isolate all yellow colored layer(s).</toolTip>
+			<statusTip>Toggle isolate all yellow colored layer(s).</statusTip>
+			<activationFlags>1</activationFlags>
+		</Action>
+	</Actions>
+</ActionCollection>
