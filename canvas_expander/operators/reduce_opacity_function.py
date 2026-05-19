@@ -9,6 +9,8 @@ def ReduceOpacityFunction(
     instance = Krita.instance()
     documement = instance.activeDocument()
     window = instance.activeWindow()
+    activeNode = documement.activeNode()
+
     # originalActiveNode = documement.activeNode()
     # TODO: restore selected nodes after operation.
     #     from krita import QTreeView, QItemSelectionModel
@@ -37,6 +39,12 @@ def ReduceOpacityFunction(
         for node in documement.rootNode().findChildNodes("", True, True, "paintlayer"):
             if not node.locked():
                 nodes.append(node)
+
+    # Put the activeNode at the end of node list,
+    # so that its selected at the end of the operation.
+    if activeNode.type() == "paintlayer":
+        nodes = list(filter(lambda n: n != activeNode, nodes))
+        nodes.append(activeNode)
 
     if not nodes:
         return (False, "No unlocked paint layers")
