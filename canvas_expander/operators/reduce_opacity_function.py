@@ -9,7 +9,19 @@ def ReduceOpacityFunction(
     instance = Krita.instance()
     documement = instance.activeDocument()
     window = instance.activeWindow()
-    originalActiveNode = documement.activeNode()
+    # originalActiveNode = documement.activeNode()
+    # TODO: restore selected nodes after operation.
+    #     from krita import QTreeView, QItemSelectionModel
+    #     listLayers = window.qwindow().findChild(QTreeView, "listLayers")
+    #     model = listLayers.model()
+    #     sModel = listLayers.selectionModel()
+    #     selectedIndexs = sModel.selectedIndexes()
+    #     currentIndex = sModel.currentIndex()
+    #
+    #     # Restore selection
+    #     sModel.setCurrentIndex(currentIndex, QItemSelectionModel.SelectCurrent)
+    #     for selected in selectedIndexs:
+    #         sModel.setCurrentIndex(selected, QItemSelectionModel.Select)
 
     selection = documement.selection()
     if not selection:
@@ -41,7 +53,6 @@ def ReduceOpacityFunction(
         documement.waitForDone()
 
     documement.setSelection(selection)
-    documement.setActiveNode(originalActiveNode)
     documement.refreshProjection()
 
     return (True, "Complete")
